@@ -1,0 +1,17 @@
+D:\Working\ThacSi\OPP\Exercice\Exercice\bin\Debug\Exercice01.exe
+D:\Working\ThacSi\OPP\Exercice\Exercice\bin\Debug\Exercice01.pdb
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.frmMain.resources
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.Properties.Resources.resources
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.csproj.GenerateResource.cache
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.csproj.CoreCompileInputs.cache
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.exe
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice01.pdb
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\bin\Debug\Exercice01.exe
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\bin\Debug\Exercice01.pdb
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.csprojAssemblyReference.cache
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.frmMain.resources
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.Properties.Resources.resources
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.csproj.GenerateResource.cache
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.csproj.CoreCompileInputs.cache
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.exe
+D:\Working\ThacSi\OPP\Exercice01\Exercice01\obj\Debug\Exercice01.pdb

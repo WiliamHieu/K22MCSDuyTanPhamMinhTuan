@@ -1,0 +1,8 @@
+D:\Working\ThacSi\OPP\Exercice\Exercice\bin\Debug\Exercice.exe
+D:\Working\ThacSi\OPP\Exercice\Exercice\bin\Debug\Exercice.pdb
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.Properties.Resources.resources
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.csproj.GenerateResource.cache
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.csproj.CoreCompileInputs.cache
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.exe
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.pdb
+D:\Working\ThacSi\OPP\Exercice\Exercice\obj\Debug\Exercice.frmMain.resources
