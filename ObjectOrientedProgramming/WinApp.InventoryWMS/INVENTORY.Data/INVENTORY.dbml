@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="INVENTORY" EntityNamespace="INVENTORY.Data" ContextNamespace="INVENTORY.Data" Class="InventoryDbContext" EntityBase="LinqEntityBase" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.; Database=INVENTORY;UID=sa;PWD=sa" SettingsObjectName="Properties.Settings" SettingsPropertyName="InventoryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DmBoPhan" Member="DmBoPhan">
+    <Type Name="DmBoPhan">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmBoPhan_KhPhieuXuat" Member="BoPhanKhPhieuXuatList" Storage="_boPhanKhPhieuXuatList" OtherKey="IdBoPhan" Type="KhPhieuXuat" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmChiNhanh" Member="DmChiNhanh">
+    <Type Name="DmChiNhanh">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenVietTat" Storage="_tenVietTat" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Storage="_diaChi" Type="System.String" DbType="nvarchar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="LienHe" Storage="_lienHe" Type="System.String" DbType="nvarchar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSoThue" Storage="_maSoThue" Type="System.String" DbType="nvarchar(20)" CanBeNull="true" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmChiNhanh_DmKhoHang" Member="ChiNhanhDmKhoHangList" Storage="_chiNhanhDmKhoHangList" OtherKey="IdChiNhanh" Type="DmKhoHang" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmDonViTinh" Member="DmDonViTinh">
+    <Type Name="DmDonViTinh">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmDonViTinh_DmLoaiVatTu" Member="DonViTinhDmLoaiVatTuList" Storage="_donViTinhDmLoaiVatTuList" OtherKey="IdDonViTinh" Type="DmLoaiVatTu" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmKhoHang" Member="DmKhoHang">
+    <Type Name="DmKhoHang">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdChiNhanh" Storage="_idChiNhanh" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenVietTat" Storage="_tenVietTat" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmChiNhanh_DmKhoHang" Member="ChiNhanhDmChiNhanh" Storage="_chiNhanhDmChiNhanh" ThisKey="IdChiNhanh" Type="DmChiNhanh" IsForeignKey="true" />
+      <Association Name="DmKhoHang_DmNguonKho" Member="KhoHangDmNguonKhoList" Storage="_khoHangDmNguonKhoList" OtherKey="IdKhoHang" Type="DmNguonKho" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_HtNguoiDungVaiTro" Member="KhoHangHtNguoiDungVaiTroList" Storage="_khoHangHtNguoiDungVaiTroList" OtherKey="IdKhoHang" Type="HtNguoiDungVaiTro" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuChuyen" Member="KhoHangKhPhieuChuyenList" Storage="_khoHangKhPhieuChuyenList" OtherKey="IdKhoHang" Type="KhPhieuChuyen" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuChuyen1" Member="KhoNhanKhPhieuChuyenList" Storage="_khoNhanKhPhieuChuyenList" OtherKey="IdKhoNhan" Type="KhPhieuChuyen" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuNhap" Member="KhoHangKhPhieuNhapList" Storage="_khoHangKhPhieuNhapList" OtherKey="IdKhoHang" Type="KhPhieuNhap" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuNhap1" Member="KhoChuyenKhPhieuNhapList" Storage="_khoChuyenKhPhieuNhapList" OtherKey="IdKhoChuyen" Type="KhPhieuNhap" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuNhapNb" Member="KhoHangKhPhieuNhapNbList" Storage="_khoHangKhPhieuNhapNbList" OtherKey="IdKhoHang" Type="KhPhieuNhapNb" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuNhapNb1" Member="KhoChuyenKhPhieuNhapNbList" Storage="_khoChuyenKhPhieuNhapNbList" OtherKey="IdKhoChuyen" Type="KhPhieuNhapNb" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhPhieuXuat" Member="KhoHangKhPhieuXuatList" Storage="_khoHangKhPhieuXuatList" OtherKey="IdKhoHang" Type="KhPhieuXuat" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhSanPham" Member="KhoHangKhSanPhamList" Storage="_khoHangKhSanPhamList" OtherKey="IdKhoHang" Type="KhSanPham" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmLoaiVatTu" Member="DmLoaiVatTu">
+    <Type Name="DmLoaiVatTu">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdDonViTinh" Storage="_idDonViTinh" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmDonViTinh_DmLoaiVatTu" Member="DonViTinhDmDonViTinh" Storage="_donViTinhDmDonViTinh" ThisKey="IdDonViTinh" Type="DmDonViTinh" IsForeignKey="true" />
+      <Association Name="DmNhomVatTu_DmLoaiVatTu" Member="NhomVatTuDmNhomVatTu" Storage="_nhomVatTuDmNhomVatTu" ThisKey="IdNhomVatTu" Type="DmNhomVatTu" IsForeignKey="true" />
+      <Association Name="DmLoaiVatTu_KhPhieuChuyenCt" Member="LoaiVatTuKhPhieuChuyenCtList" Storage="_loaiVatTuKhPhieuChuyenCtList" OtherKey="IdLoaiVatTu" Type="KhPhieuChuyenCt" DeleteOnNull="false" />
+      <Association Name="DmLoaiVatTu_KhPhieuNhapCt" Member="LoaiVatTuKhPhieuNhapCtList" Storage="_loaiVatTuKhPhieuNhapCtList" OtherKey="IdLoaiVatTu" Type="KhPhieuNhapCt" DeleteOnNull="false" />
+      <Association Name="DmLoaiVatTu_KhPhieuNhapNbCt" Member="LoaiVatTuKhPhieuNhapNbCtList" Storage="_loaiVatTuKhPhieuNhapNbCtList" OtherKey="IdLoaiVatTu" Type="KhPhieuNhapNbCt" DeleteOnNull="false" />
+      <Association Name="DmLoaiVatTu_KhPhieuXuatCt" Member="LoaiVatTuKhPhieuXuatCtList" Storage="_loaiVatTuKhPhieuXuatCtList" OtherKey="IdLoaiVatTu" Type="KhPhieuXuatCt" DeleteOnNull="false" />
+      <Association Name="DmLoaiVatTu_KhSanPham" Member="LoaiVatTuKhSanPhamList" Storage="_loaiVatTuKhSanPhamList" OtherKey="IdLoaiVatTu" Type="KhSanPham" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmNguonKho" Member="DmNguonKho">
+    <Type Name="DmNguonKho">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Association Name="DmKhoHang_DmNguonKho" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" DeleteOnNull="false" />
+      <Association Name="DmNguonNhap_DmNguonKho" Member="NguonNhapDmNguonNhap" Storage="_nguonNhapDmNguonNhap" ThisKey="IdNguonNhap" Type="DmNguonNhap" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmNguonNhap" Member="DmNguonNhap">
+    <Type Name="DmNguonNhap">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Storage="_diaChi" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="LienHe" Storage="_lienHe" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmNguonNhap_DmNguonKho" Member="NguonNhapDmNguonKhoList" Storage="_nguonNhapDmNguonKhoList" OtherKey="IdNguonNhap" Type="DmNguonKho" DeleteOnNull="false" />
+      <Association Name="DmNguonNhap_KhPhieuNhap" Member="NguonNhapKhPhieuNhapList" Storage="_nguonNhapKhPhieuNhapList" OtherKey="IdNguonNhap" Type="KhPhieuNhap" DeleteOnNull="false" />
+      <Association Name="DmNguonNhap_KhPhieuNhapNb" Member="NguonNhapKhPhieuNhapNbList" Storage="_nguonNhapKhPhieuNhapNbList" OtherKey="IdNguonNhap" Type="KhPhieuNhapNb" DeleteOnNull="false" />
+      <Association Name="DmNguonNhap_KhSanPham" Member="NguonNhapKhSanPhamList" Storage="_nguonNhapKhSanPhamList" OtherKey="IdNguonNhap" Type="KhSanPham" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DmNhomVatTu" Member="DmNhomVatTu">
+    <Type Name="DmNhomVatTu">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmNhomVatTu_DmLoaiVatTu" Member="NhomVatTuDmLoaiVatTuList" Storage="_nhomVatTuDmLoaiVatTuList" OtherKey="IdNhomVatTu" Type="DmLoaiVatTu" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtChucNang" Member="HtChucNang">
+    <Type Name="HtChucNang">
+      <Column Name="TenForm" Storage="_tenForm" Type="System.String" DbType="varchar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhanHe" Storage="_idPhanHe" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="HtPhanHe_HtChucNang" Member="PhanHeHtPhanHe" Storage="_phanHeHtPhanHe" ThisKey="IdPhanHe" Type="HtPhanHe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtNguoiDung" Member="HtNguoiDung">
+    <Type Name="HtNguoiDung">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTruyCap" Storage="_tenTruyCap" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Storage="_matKhau" Type="System.String" DbType="varchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DangNhap" Storage="_dangNhap" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="HtNguoiDung_HtNguoiDungVaiTro" Member="NguoiDungHtNguoiDungVaiTroList" Storage="_nguoiDungHtNguoiDungVaiTroList" OtherKey="IdNguoiDung" Type="HtNguoiDungVaiTro" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtNguoiDungVaiTro" Member="HtNguoiDungVaiTro">
+    <Type Name="HtNguoiDungVaiTro">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdNguoiDung" Storage="_idNguoiDung" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdVaiTro" Storage="_idVaiTro" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="MacDinh" Storage="_macDinh" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Association Name="DmKhoHang_HtNguoiDungVaiTro" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="HtNguoiDung_HtNguoiDungVaiTro" Member="NguoiDungHtNguoiDung" Storage="_nguoiDungHtNguoiDung" ThisKey="IdNguoiDung" Type="HtNguoiDung" IsForeignKey="true" />
+      <Association Name="HtVaiTro_HtNguoiDungVaiTro" Member="VaiTroHtVaiTro" Storage="_vaiTroHtVaiTro" ThisKey="IdVaiTro" Type="HtVaiTro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtPhanHe" Member="HtPhanHe">
+    <Type Name="HtPhanHe">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="HtPhanHe_HtChucNang" Member="PhanHeHtChucNangList" Storage="_phanHeHtChucNangList" OtherKey="IdPhanHe" Type="HtChucNang" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtQuyenHan" Member="HtQuyenHan">
+    <Type Name="HtQuyenHan">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVaiTro" Storage="_idVaiTro" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TenForm" Storage="_tenForm" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Xem" Storage="_xem" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Them" Storage="_them" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sua" Storage="_sua" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Xoa" Storage="_xoa" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Association Name="HtVaiTro_HtQuyenHan" Member="VaiTroHtVaiTro" Storage="_vaiTroHtVaiTro" ThisKey="IdVaiTro" Type="HtVaiTro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtThietLap" Member="HtThietLap">
+    <Type Name="HtThietLap">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenPhanMem" Storage="_tenPhanMem" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayDuLieu" Storage="_ngayDuLieu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="KieuKhoa" Storage="_kieuKhoa" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianKhoa" Storage="_thoiGianKhoa" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="XoaQuaNgay" Storage="_xoaQuaNgay" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HtVaiTro" Member="HtVaiTro">
+    <Type Name="HtVaiTro">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTu" Storage="_thuTu" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="HtVaiTro_HtNguoiDungVaiTro" Member="VaiTroHtNguoiDungVaiTroList" Storage="_vaiTroHtNguoiDungVaiTroList" OtherKey="IdVaiTro" Type="HtNguoiDungVaiTro" DeleteOnNull="false" />
+      <Association Name="HtVaiTro_HtQuyenHan" Member="VaiTroHtQuyenHanList" Storage="_vaiTroHtQuyenHanList" OtherKey="IdVaiTro" Type="HtQuyenHan" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhNhapXuat" Member="KhNhapXuat">
+    <Type Name="KhNhapXuat">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Thang" Storage="_thang" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="Nhap" Storage="_nhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Xuat" Storage="_xuat" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Chuyen" Storage="_chuyen" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuChuyen" Member="KhPhieuChuyen">
+    <Type Name="KhPhieuChuyen">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoNhan" Storage="_idKhoNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiGiao" Storage="_idNguoiGiao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThaiNhan" Storage="_trangThaiNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmKhoHang_KhPhieuChuyen" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmKhoHang_KhPhieuChuyen1" Member="KhoNhanDmKhoHang" Storage="_khoNhanDmKhoHang" ThisKey="IdKhoNhan" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="KhPhieuChuyen_KhPhieuChuyenCt" Member="PhieuChuyenKhPhieuChuyenCtList" Storage="_phieuChuyenKhPhieuChuyenCtList" OtherKey="IdPhieuChuyen" Type="KhPhieuChuyenCt" DeleteOnNull="false" />
+      <Association Name="KhPhieuChuyen_KhPhieuNhap" Member="PhieuChuyenKhPhieuNhapList" Storage="_phieuChuyenKhPhieuNhapList" OtherKey="IdPhieuChuyen" Type="KhPhieuNhap" DeleteOnNull="false" />
+      <Association Name="KhPhieuChuyen_KhPhieuNhapNb" Member="PhieuChuyenKhPhieuNhapNbList" Storage="_phieuChuyenKhPhieuNhapNbList" OtherKey="IdPhieuChuyen" Type="KhPhieuNhapNb" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuChuyenCt" Member="KhPhieuChuyenCt">
+    <Type Name="KhPhieuChuyenCt">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuChuyen" Storage="_idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmLoaiVatTu_KhPhieuChuyenCt" Member="LoaiVatTuDmLoaiVatTu" Storage="_loaiVatTuDmLoaiVatTu" ThisKey="IdLoaiVatTu" Type="DmLoaiVatTu" IsForeignKey="true" />
+      <Association Name="KhPhieuChuyen_KhPhieuChuyenCt" Member="PhieuChuyenKhPhieuChuyen" Storage="_phieuChuyenKhPhieuChuyen" ThisKey="IdPhieuChuyen" Type="KhPhieuChuyen" IsForeignKey="true" />
+      <Association Name="KhPhieuChuyenCt_KhPhieuChuyenSp" Member="PhieuChuyenCtKhPhieuChuyenSpList" Storage="_phieuChuyenCtKhPhieuChuyenSpList" OtherKey="IdPhieuChuyenCt" Type="KhPhieuChuyenSp" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuChuyenSp" Member="KhPhieuChuyenSp">
+    <Type Name="KhPhieuChuyenSp">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuChuyenCt" Storage="_idPhieuChuyenCt" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Association Name="KhPhieuChuyenCt_KhPhieuChuyenSp" Member="PhieuChuyenCtKhPhieuChuyenCt" Storage="_phieuChuyenCtKhPhieuChuyenCt" ThisKey="IdPhieuChuyenCt" Type="KhPhieuChuyenCt" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhPhieuChuyenSp" Member="SanPhamKhSanPham" Storage="_sanPhamKhSanPham" ThisKey="IdSanPham" Type="KhSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuNhap" Member="KhPhieuNhap">
+    <Type Name="KhPhieuNhap">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhieuChuyen" Storage="_idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="IdKhoChuyen" Storage="_idKhoChuyen" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="IdPhieuXuat" Storage="_idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="LoaiNhap" Storage="_loaiNhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateTon" Storage="_updateTon" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmKhoHang_KhPhieuNhap" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmKhoHang_KhPhieuNhap1" Member="KhoChuyenDmKhoHang" Storage="_khoChuyenDmKhoHang" ThisKey="IdKhoChuyen" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmNguonNhap_KhPhieuNhap" Member="NguonNhapDmNguonNhap" Storage="_nguonNhapDmNguonNhap" ThisKey="IdNguonNhap" Type="DmNguonNhap" IsForeignKey="true" />
+      <Association Name="KhPhieuChuyen_KhPhieuNhap" Member="PhieuChuyenKhPhieuChuyen" Storage="_phieuChuyenKhPhieuChuyen" ThisKey="IdPhieuChuyen" Type="KhPhieuChuyen" IsForeignKey="true" />
+      <Association Name="KhPhieuXuat_KhPhieuNhap" Member="PhieuXuatKhPhieuXuat" Storage="_phieuXuatKhPhieuXuat" ThisKey="IdPhieuXuat" Type="KhPhieuXuat" IsForeignKey="true" />
+      <Association Name="KhPhieuNhap_KhPhieuNhapCt" Member="PhieuNhapKhPhieuNhapCtList" Storage="_phieuNhapKhPhieuNhapCtList" OtherKey="IdPhieuNhap" Type="KhPhieuNhapCt" DeleteOnNull="false" />
+      <Association Name="KhPhieuNhap_KhPhieuNhapNb" Member="PhieuNhapKhPhieuNhapNbList" Storage="_phieuNhapKhPhieuNhapNbList" OtherKey="IdPhieuNhap" Type="KhPhieuNhapNb" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuNhapCt" Member="KhPhieuNhapCt">
+    <Type Name="KhPhieuNhapCt">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuNhap" Storage="_idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmLoaiVatTu_KhPhieuNhapCt" Member="LoaiVatTuDmLoaiVatTu" Storage="_loaiVatTuDmLoaiVatTu" ThisKey="IdLoaiVatTu" Type="DmLoaiVatTu" IsForeignKey="true" />
+      <Association Name="KhPhieuNhap_KhPhieuNhapCt" Member="PhieuNhapKhPhieuNhap" Storage="_phieuNhapKhPhieuNhap" ThisKey="IdPhieuNhap" Type="KhPhieuNhap" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhPhieuNhapCt" Member="SanPhamKhSanPham" Storage="_sanPhamKhSanPham" ThisKey="IdSanPham" Type="KhSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuNhapNb" Member="KhPhieuNhapNb">
+    <Type Name="KhPhieuNhapNb">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoChuyen" Storage="_idKhoChuyen" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhieuChuyen" Storage="_idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhieuNhap" Storage="_idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiGiao" Storage="_idNguoiGiao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmKhoHang_KhPhieuNhapNb" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmKhoHang_KhPhieuNhapNb1" Member="KhoChuyenDmKhoHang" Storage="_khoChuyenDmKhoHang" ThisKey="IdKhoChuyen" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmNguonNhap_KhPhieuNhapNb" Member="NguonNhapDmNguonNhap" Storage="_nguonNhapDmNguonNhap" ThisKey="IdNguonNhap" Type="DmNguonNhap" IsForeignKey="true" />
+      <Association Name="KhPhieuChuyen_KhPhieuNhapNb" Member="PhieuChuyenKhPhieuChuyen" Storage="_phieuChuyenKhPhieuChuyen" ThisKey="IdPhieuChuyen" Type="KhPhieuChuyen" IsForeignKey="true" />
+      <Association Name="KhPhieuNhap_KhPhieuNhapNb" Member="PhieuNhapKhPhieuNhap" Storage="_phieuNhapKhPhieuNhap" ThisKey="IdPhieuNhap" Type="KhPhieuNhap" IsForeignKey="true" />
+      <Association Name="KhPhieuNhapNb_KhPhieuNhapNbCt" Member="PhieuNhapNbKhPhieuNhapNbCtList" Storage="_phieuNhapNbKhPhieuNhapNbCtList" OtherKey="IdPhieuNhapNb" Type="KhPhieuNhapNbCt" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuNhapNbCt" Member="KhPhieuNhapNbCt">
+    <Type Name="KhPhieuNhapNbCt">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuNhapNb" Storage="_idPhieuNhapNb" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmLoaiVatTu_KhPhieuNhapNbCt" Member="LoaiVatTuDmLoaiVatTu" Storage="_loaiVatTuDmLoaiVatTu" ThisKey="IdLoaiVatTu" Type="DmLoaiVatTu" IsForeignKey="true" />
+      <Association Name="KhPhieuNhapNb_KhPhieuNhapNbCt" Member="PhieuNhapNbKhPhieuNhapNb" Storage="_phieuNhapNbKhPhieuNhapNb" ThisKey="IdPhieuNhapNb" Type="KhPhieuNhapNb" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhPhieuNhapNbCt" Member="SanPhamKhSanPham" Storage="_sanPhamKhSanPham" ThisKey="IdSanPham" Type="KhSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuXuat" Member="KhPhieuXuat">
+    <Type Name="KhPhieuXuat">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiXuat" Storage="_loaiXuat" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdBoPhan" Storage="_idBoPhan" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiNhan" Storage="_idNguoiNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateTon" Storage="_updateTon" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="KhPhieuXuat_KhPhieuNhap" Member="PhieuXuatKhPhieuNhap" Storage="_phieuXuatKhPhieuNhap" OtherKey="IdPhieuXuat" Type="KhPhieuNhap" Cardinality="One" DeleteOnNull="false" />
+      <Association Name="DmBoPhan_KhPhieuXuat" Member="BoPhanDmBoPhan" Storage="_boPhanDmBoPhan" ThisKey="IdBoPhan" Type="DmBoPhan" IsForeignKey="true" />
+      <Association Name="DmKhoHang_KhPhieuXuat" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="KhPhieuXuat_KhPhieuXuatCt" Member="PhieuXuatKhPhieuXuatCtList" Storage="_phieuXuatKhPhieuXuatCtList" OtherKey="IdPhieuXuat" Type="KhPhieuXuatCt" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuXuatCt" Member="KhPhieuXuatCt">
+    <Type Name="KhPhieuXuatCt">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuXuat" Storage="_idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Association Name="DmLoaiVatTu_KhPhieuXuatCt" Member="LoaiVatTuDmLoaiVatTu" Storage="_loaiVatTuDmLoaiVatTu" ThisKey="IdLoaiVatTu" Type="DmLoaiVatTu" IsForeignKey="true" />
+      <Association Name="KhPhieuXuat_KhPhieuXuatCt" Member="PhieuXuatKhPhieuXuat" Storage="_phieuXuatKhPhieuXuat" ThisKey="IdPhieuXuat" Type="KhPhieuXuat" IsForeignKey="true" />
+      <Association Name="KhPhieuXuatCt_KhPhieuXuatSp" Member="PhieuXuatCtKhPhieuXuatSpList" Storage="_phieuXuatCtKhPhieuXuatSpList" OtherKey="IdPhieuXuatCt" Type="KhPhieuXuatSp" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhPhieuXuatSp" Member="KhPhieuXuatSp">
+    <Type Name="KhPhieuXuatSp">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPhieuXuatCt" Storage="_idPhieuXuatCt" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Association Name="KhPhieuXuatCt_KhPhieuXuatSp" Member="PhieuXuatCtKhPhieuXuatCt" Storage="_phieuXuatCtKhPhieuXuatCt" ThisKey="IdPhieuXuatCt" Type="KhPhieuXuatCt" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhPhieuXuatSp" Member="SanPhamKhSanPham" Storage="_sanPhamKhSanPham" ThisKey="IdSanPham" Type="KhSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhSanPham" Member="KhSanPham">
+    <Type Name="KhSanPham">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongNhap" Storage="_soLuongNhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongTon" Storage="_soLuongTon" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(100)" CanBeNull="true" />
+      <Association Name="KhSanPham_KhPhieuChuyenSp" Member="SanPhamKhPhieuChuyenSpList" Storage="_sanPhamKhPhieuChuyenSpList" OtherKey="IdSanPham" Type="KhPhieuChuyenSp" DeleteOnNull="false" />
+      <Association Name="KhSanPham_KhPhieuNhapCt" Member="SanPhamKhPhieuNhapCtList" Storage="_sanPhamKhPhieuNhapCtList" OtherKey="IdSanPham" Type="KhPhieuNhapCt" DeleteOnNull="false" />
+      <Association Name="KhSanPham_KhPhieuNhapNbCt" Member="SanPhamKhPhieuNhapNbCtList" Storage="_sanPhamKhPhieuNhapNbCtList" OtherKey="IdSanPham" Type="KhPhieuNhapNbCt" DeleteOnNull="false" />
+      <Association Name="KhSanPham_KhPhieuXuatSp" Member="SanPhamKhPhieuXuatSpList" Storage="_sanPhamKhPhieuXuatSpList" OtherKey="IdSanPham" Type="KhPhieuXuatSp" DeleteOnNull="false" />
+      <Association Name="DmKhoHang_KhSanPham" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
+      <Association Name="DmLoaiVatTu_KhSanPham" Member="LoaiVatTuDmLoaiVatTu" Storage="_loaiVatTuDmLoaiVatTu" ThisKey="IdLoaiVatTu" Type="DmLoaiVatTu" IsForeignKey="true" />
+      <Association Name="DmNguonNhap_KhSanPham" Member="NguonNhapDmNguonNhap" Storage="_nguonNhapDmNguonNhap" ThisKey="IdNguonNhap" Type="DmNguonNhap" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhSanPham" Member="SanPhamKhSanPham" Storage="_sanPhamKhSanPham" ThisKey="IdSanPham" Type="KhSanPham" IsForeignKey="true" />
+      <Association Name="KhSanPham_KhSanPham" Member="SanPhamKhSanPhamList" Storage="_sanPhamKhSanPhamList" OtherKey="IdSanPham" Type="KhSanPham" DeleteOnNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Custom_DmLoaiVatTu_Get_DropDown" Method="CustomDmLoaiVatTuGetDropDown">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdNhomVatTu" Parameter="idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@LoaiGet" Parameter="loaiGet" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomDmLoaiVatTuGetDropDownResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100)" CanBeNull="true" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_DmLoaiVatTu_Get_List" Method="CustomDmLoaiVatTuGetList">
+    <Parameter Name="@IdNhomVatTu" Parameter="idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@TrangThai" Parameter="trangThai" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomDmLoaiVatTuGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdDonViTinh" Storage="_idDonViTinh" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtNgayThang_GetValue" Method="CustomHtNgayThangGetValue">
+    <ElementType Name="CustomHtNgayThangGetValueResult">
+      <Column Name="ServerDateTime" Storage="_serverDateTime" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtNguoiDung_Get_DropDown" Method="CustomHtNguoiDungGetDropDown">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtNguoiDungGetDropDownResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtNguoiDung_Get_List" Method="CustomHtNguoiDungGetList">
+    <Parameter Name="@IdChiNhanh" Parameter="idChiNhanh" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdVaiTro" Parameter="idVaiTro" Type="System.Int32" DbType="int" />
+    <Parameter Name="@HienThi" Parameter="hienThi" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtNguoiDungGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTruyCap" Storage="_tenTruyCap" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Storage="_matKhau" Type="System.String" DbType="varchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DangNhap" Storage="_dangNhap" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtNguoiDung_Get_ListKhoHang" Method="CustomHtNguoiDungGetListKhoHang">
+    <Parameter Name="@IdNguoiDung" Parameter="idNguoiDung" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtNguoiDungGetListKhoHangResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenVietTat" Storage="_tenVietTat" Type="System.String" DbType="nvarchar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IdVaiTro" Storage="_idVaiTro" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="MacDinh" Storage="_macDinh" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtNguoiDung_Get_ListVaiTro" Method="CustomHtNguoiDungGetListVaiTro">
+    <Parameter Name="@IdNguoiDung" Parameter="idNguoiDung" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtNguoiDungGetListVaiTroResult">
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoHang" Storage="_tenKhoHang" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IdVaiTro" Storage="_idVaiTro" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="MacDinh" Storage="_macDinh" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtQuyenHan_Get_List" Method="CustomHtQuyenHanGetList">
+    <Parameter Name="@IdVaiTro" Parameter="idVaiTro" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtQuyenHanGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPhanHe" Storage="_idPhanHe" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdVaiTro" Storage="_idVaiTro" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="TenForm" Storage="_tenForm" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenPhanHe" Storage="_tenPhanHe" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ThuTuPhanHe" Storage="_thuTuPhanHe" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TenChucNang" Storage="_tenChucNang" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Xem" Storage="_xem" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Them" Storage="_them" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sua" Storage="_sua" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="Xoa" Storage="_xoa" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
+      <Column Name="ThayDoi" Storage="_thayDoi" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_HtVaiTro_Get_KhoHang" Method="CustomHtVaiTroGetKhoHang">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomHtVaiTroGetKhoHangResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Storage="_ten" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhNhapXuat_Insert_Data" Method="CustomKhNhapXuatInsertData">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@NgayChay" Parameter="ngayChay" Type="System.DateTime" DbType="date" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuChuyen_Get_List" Method="CustomKhPhieuChuyenGetList">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <ElementType Name="CustomKhPhieuChuyenGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoNhan" Storage="_tenKhoNhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThaiNhan" Storage="_trangThaiNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TenTrangThaiChuyen" Storage="_tenTrangThaiChuyen" Type="System.String" DbType="nvarchar(11)" CanBeNull="true" />
+      <Column Name="TenTrangThaiNhan" Storage="_tenTrangThaiNhan" Type="System.String" DbType="nvarchar(9)" CanBeNull="true" />
+      <Column Name="TenNguoiGiao" Storage="_tenNguoiGiao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuChuyen_Get_ListChiTiet" Method="CustomKhPhieuChuyenGetListChiTiet">
+    <Parameter Name="@IdPhieuChuyen" Parameter="idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuChuyenGetListChiTietResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="SoLuongOld" Storage="_soLuongOld" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Storage="_status" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhap_Check_Delete" Method="CustomKhPhieuNhapCheckDelete">
+    <Parameter Name="@IdPhieuNhap" Parameter="idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@IdLoaiVatTu" Parameter="idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuNhapCheckDeleteResult">
+      <Column Name="SoDong" Storage="_soDong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhap_Get_List" Method="CustomKhPhieuNhapGetList">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <ElementType Name="CustomKhPhieuNhapGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiNhap" Storage="_loaiNhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguonNhap" Storage="_tenNguonNhap" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiNhap" Storage="_tenLoaiNhap" Type="System.String" DbType="nvarchar(11)" CanBeNull="true" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhap_Get_ListChiTiet" Method="CustomKhPhieuNhapGetListChiTiet">
+    <Parameter Name="@IdPhieuNhap" Parameter="idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuNhapGetListChiTietResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdSanPham" Storage="_idSanPham" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongNhap" Storage="_soLuongNhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongTon" Storage="_soLuongTon" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="IdLoaiVatTuOld" Storage="_idLoaiVatTuOld" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongOld" Storage="_soLuongOld" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Storage="_status" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhap_Get_ListChiTietNb" Method="CustomKhPhieuNhapGetListChiTietNb">
+    <Parameter Name="@IdPhieuNhap" Parameter="idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuNhapGetListChiTietNbResult">
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="SoLuongOld" Storage="_soLuongOld" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="Status" Storage="_status" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhapNb_Get_List" Method="CustomKhPhieuNhapNbGetList">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomKhPhieuNhapNbGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoChuyen" Storage="_tenKhoChuyen" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Storage="_trangThai" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TenTrangThai" Storage="_tenTrangThai" Type="System.String" DbType="nvarchar(13)" CanBeNull="true" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuNhapNb_Get_ListChiTiet" Method="CustomKhPhieuNhapNbGetListChiTiet">
+    <Parameter Name="@IdPhieuNhapNb" Parameter="idPhieuNhapNb" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuNhapNbGetListChiTietResult">
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="TrangThaiNhan" Storage="_trangThaiNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThaiNhanOld" Storage="_trangThaiNhanOld" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="CheckBox" Storage="_checkBox" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="TenTrangThai" Storage="_tenTrangThai" Type="System.String" DbType="nvarchar(9)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuXuat_Get_List" Method="CustomKhPhieuXuatGetList">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <ElementType Name="CustomKhPhieuXuatGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiXuat" Storage="_loaiXuat" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="IdBoPhan" Storage="_idBoPhan" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiXuat" Storage="_tenLoaiXuat" Type="System.String" DbType="nvarchar(8)" CanBeNull="true" />
+      <Column Name="TenBoPhan" Storage="_tenBoPhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiNhan" Storage="_tenNguoiNhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhPhieuXuat_Get_ListChiTiet" Method="CustomKhPhieuXuatGetListChiTiet">
+    <Parameter Name="@IdPhieuXuat" Parameter="idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhPhieuXuatGetListChiTietResult">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="SoLuongOld" Storage="_soLuongOld" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Storage="_status" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhSanPham_Get_List" Method="CustomKhSanPhamGetList">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdNhomVatTu" Parameter="idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhSanPhamGetListResult">
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_KhSanPham_Get_SoLuong" Method="CustomKhSanPhamGetSoLuong">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdLoaiVatTu" Parameter="idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <ElementType Name="CustomKhSanPhamGetSoLuongResult">
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpHangChuyen" Method="CustomRpHangChuyen">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@IdKhoNhan" Parameter="idKhoNhan" Type="System.Int32" DbType="int" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@LoaiBaoCao" Parameter="loaiBaoCao" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomRpHangChuyenResult1">
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+    <ElementType Name="CustomRpHangChuyenResult2">
+      <Column Name="TenKhoNhan" Storage="_tenKhoNhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiGiao" Storage="_tenNguoiGiao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpHangLuuKho" Method="CustomRpHangLuuKho">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <Parameter Name="@NgayLuuKho" Parameter="ngayLuuKho" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomRpHangLuuKhoResult">
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoHang" Storage="_tenKhoHang" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTon" Storage="_ngayTon" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpHangNhap" Method="CustomRpHangNhap">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@IdNguonNhap" Parameter="idNguonNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <Parameter Name="@LoaiNhap" Parameter="loaiNhap" Type="System.Int32" DbType="int" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@LoaiBaoCao" Parameter="loaiBaoCao" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomRpHangNhapResult1">
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+    <ElementType Name="CustomRpHangNhapResult2">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguonNhap" Storage="_tenNguonNhap" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiNhap" Storage="_tenLoaiNhap" Type="System.String" DbType="nvarchar(11)" CanBeNull="true" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpHangTonTheoKho" Method="CustomRpHangTonTheoKho">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <ElementType Name="CustomRpHangTonTheoKhoResult">
+      <Column Name="TenKhoHang" Storage="_tenKhoHang" Type="System.String" DbType="nvarchar(100)" CanBeNull="true" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(200)" CanBeNull="true" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(200)" CanBeNull="true" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpHangXuat" Method="CustomRpHangXuat">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@IdBoPhan" Parameter="idBoPhan" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@LoaiBaoCao" Parameter="loaiBaoCao" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomRpHangXuatResult1">
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+    <ElementType Name="CustomRpHangXuatResult2">
+      <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenBoPhan" Storage="_tenBoPhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiNhan" Storage="_tenNguoiNhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Storage="_ngayTao" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Storage="_soLuong" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpNhapXuatTon" Method="CustomRpNhapXuatTon">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@ListNhomVatTu" Parameter="listNhomVatTu" Type="System.String" DbType="varchar(MAX)" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <ElementType Name="CustomRpNhapXuatTonResult">
+      <Column Name="IdNhomVatTu" Storage="_idNhomVatTu" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="IdLoaiVatTu" Storage="_idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
+      <Column Name="TenNhomVatTu" Storage="_tenNhomVatTu" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenLoaiVatTu" Storage="_tenLoaiVatTu" Type="System.String" DbType="nvarchar(100)" CanBeNull="true" />
+      <Column Name="TenDonViTinh" Storage="_tenDonViTinh" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QuyCach" Storage="_quyCach" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
+      <Column Name="TonDau" Storage="_tonDau" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="Nhap" Storage="_nhap" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="Xuat" Storage="_xuat" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="Chuyen" Storage="_chuyen" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="TonCuoi" Storage="_tonCuoi" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Custom_RpNhapXuatTonChiTiet" Method="CustomRpNhapXuatTonChiTiet">
+    <Parameter Name="@ListKhoHang" Parameter="listKhoHang" Type="System.String" DbType="varchar(100)" />
+    <Parameter Name="@IdLoaiVatTu" Parameter="idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="date" />
+    <Parameter Name="@DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="date" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_DmLoaiVatTu_Delete" Method="CustomGenDmLoaiVatTuDelete">
+    <Parameter Name="@IdLoaiVatTu" Parameter="idLoaiVatTu" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@DeleteAll" Parameter="deleteAll" Type="System.Boolean" DbType="bit" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuChuyen_Delete" Method="CustomGenKhPhieuChuyenDelete">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdPhieuChuyen" Parameter="idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@DeleteAll" Parameter="deleteAll" Type="System.Boolean" DbType="bit" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuChuyen_Get_SoPhieu" Method="CustomGenKhPhieuChuyenGetSoPhieu">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@MaKhoHang" Parameter="maKhoHang" Type="System.String" DbType="nvarchar(5)" />
+    <Parameter Name="@MonthYear" Parameter="monthYear" Type="System.String" DbType="varchar(4)" />
+    <ElementType Name="CustomGenKhPhieuChuyenGetSoPhieuResult">
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="varchar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuChuyenCt_Update" Method="CustomGenKhPhieuChuyenCtUpdate">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdPhieuChuyen" Parameter="idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@IdPhieuNhapNb" Parameter="idPhieuNhapNb" Type="System.Guid" DbType="uniqueidentifier" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuNhap_Delete" Method="CustomGenKhPhieuNhapDelete">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdPhieuNhap" Parameter="idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@DeleteAll" Parameter="deleteAll" Type="System.Boolean" DbType="bit" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuNhap_Get_SoPhieu" Method="CustomGenKhPhieuNhapGetSoPhieu">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@MaKhoHang" Parameter="maKhoHang" Type="System.String" DbType="nvarchar(5)" />
+    <Parameter Name="@MonthYear" Parameter="monthYear" Type="System.String" DbType="varchar(4)" />
+    <ElementType Name="CustomGenKhPhieuNhapGetSoPhieuResult">
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="varchar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuNhap_Update" Method="CustomGenKhPhieuNhapUpdate">
+    <Parameter Name="@IdPhieuNhap" Parameter="idPhieuNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@IdNguonNhap" Parameter="idNguonNhap" Type="System.Guid" DbType="uniqueidentifier" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuNhapNb_Delete" Method="CustomGenKhPhieuNhapNbDelete">
+    <Parameter Name="@IdPhieuNhapNb" Parameter="idPhieuNhapNb" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@DeleteAll" Parameter="deleteAll" Type="System.Boolean" DbType="bit" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuNhapNb_Get_SoPhieu" Method="CustomGenKhPhieuNhapNbGetSoPhieu">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@MonthYear" Parameter="monthYear" Type="System.String" DbType="varchar(4)" />
+    <ElementType Name="CustomGenKhPhieuNhapNbGetSoPhieuResult">
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="varchar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuXuat_Delete" Method="CustomGenKhPhieuXuatDelete">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdPhieuXuat" Parameter="idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier" />
+    <Parameter Name="@DeleteAll" Parameter="deleteAll" Type="System.Boolean" DbType="bit" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuXuat_Get_SoPhieu" Method="CustomGenKhPhieuXuatGetSoPhieu">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@MaKhoHang" Parameter="maKhoHang" Type="System.String" DbType="nvarchar(5)" />
+    <Parameter Name="@MonthYear" Parameter="monthYear" Type="System.String" DbType="varchar(4)" />
+    <ElementType Name="CustomGenKhPhieuXuatGetSoPhieuResult">
+      <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="varchar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CustomGen_KhPhieuXuatCt_Update" Method="CustomGenKhPhieuXuatCtUpdate">
+    <Parameter Name="@IdKhoHang" Parameter="idKhoHang" Type="System.Int32" DbType="int" />
+    <Parameter Name="@IdPhieuXuat" Parameter="idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier" />
+    <Return Type="System.Int32" DbType="int" />
+  </Function>
+  <Function Name="dbo.ImplementNamingStandard" Method="ImplementNamingStandard">
+    <Parameter Name="@SELECT_Only" Parameter="sELECTOnly" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@PrimaryKeys" Parameter="primaryKeys" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@ForeignKeys" Parameter="foreignKeys" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@Indexes" Parameter="indexes" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@UniqueConstraints" Parameter="uniqueConstraints" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@DefaultConstraints" Parameter="defaultConstraints" Type="System.Boolean" DbType="bit" />
+    <Parameter Name="@CheckConstraints" Parameter="checkConstraints" Type="System.Boolean" DbType="bit" />
+    <ElementType Name="ImplementNamingStandardResult">
+      <Column Name="Column1" Storage="_column1" Type="System.String" DbType="nvarchar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

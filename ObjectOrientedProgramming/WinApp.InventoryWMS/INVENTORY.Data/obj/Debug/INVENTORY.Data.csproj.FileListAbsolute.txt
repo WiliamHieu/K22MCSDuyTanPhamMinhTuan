@@ -1,0 +1,10 @@
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\INVENTORY.Data.dll
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\INVENTORY.Data.pdb
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\CodeSmith.Data.dll
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\CodeSmith.Data.LinqToSql.dll
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\CodeSmith.Data.xml
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\bin\Debug\CodeSmith.Data.LinqToSql.xml
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CopyComplete
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.dll
+D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.pdb

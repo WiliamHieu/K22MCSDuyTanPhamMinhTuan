@@ -1,0 +1,5 @@
+D:\Working\GitHub\MTAdvancedDatabase\WinApp\MTDecisionTreeID3\obj\Release\MTDecisionTreeID3.csprojAssemblyReference.cache
+D:\Working\GitHub\MTAdvancedDatabase\WinApp\MTDecisionTreeID3\obj\Release\MTDecisionTreeID3.frmMain.resources
+D:\Working\GitHub\MTAdvancedDatabase\WinApp\MTDecisionTreeID3\obj\Release\MTDecisionTreeID3.Properties.Resources.resources
+D:\Working\GitHub\MTAdvancedDatabase\WinApp\MTDecisionTreeID3\obj\Release\MTDecisionTreeID3.csproj.GenerateResource.cache
+D:\Working\GitHub\MTAdvancedDatabase\WinApp\MTDecisionTreeID3\obj\Release\MTDecisionTreeID3.csproj.CoreCompileInputs.cache

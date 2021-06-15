@@ -1,0 +1,13 @@
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\bin\Debug\ImageProcessing.exe
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\bin\Debug\ImageProcessing.pdb
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmMain.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.Properties.Resources.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.csproj.GenerateResource.cache
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.csproj.CoreCompileInputs.cache
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.exe
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.pdb
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmInvert.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmBrightness.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmContrast.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmGrayScale.resources
+D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmGamma.resources

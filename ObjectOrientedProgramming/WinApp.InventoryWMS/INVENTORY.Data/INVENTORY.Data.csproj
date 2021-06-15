@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9952876-1190-4AC7-A059-BA2039CD1807}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>INVENTORY.Data</RootNamespace>
+    <AssemblyName>INVENTORY.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeSmith.Data">
+      <HintPath>..\..\..\..\Working\GenerateCode\PLINQO\Common\v4.0\CodeSmith.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeSmith.Data.LinqToSql">
+      <HintPath>..\..\..\..\Working\GenerateCode\PLINQO\Common\v4.0\CodeSmith.Data.LinqToSql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\DmBoPhan.cs" />
+    <Compile Include="Entities\DmBoPhan.Generated.cs">
+      <DependentUpon>DmBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmChiNhanh.cs" />
+    <Compile Include="Entities\DmChiNhanh.Generated.cs">
+      <DependentUpon>DmChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmDonViTinh.cs" />
+    <Compile Include="Entities\DmDonViTinh.Generated.cs">
+      <DependentUpon>DmDonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmKhoHang.cs" />
+    <Compile Include="Entities\DmKhoHang.Generated.cs">
+      <DependentUpon>DmKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmLoaiVatTu.cs" />
+    <Compile Include="Entities\DmLoaiVatTu.Generated.cs">
+      <DependentUpon>DmLoaiVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmNguonKho.cs" />
+    <Compile Include="Entities\DmNguonKho.Generated.cs">
+      <DependentUpon>DmNguonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmNguonNhap.cs" />
+    <Compile Include="Entities\DmNguonNhap.Generated.cs">
+      <DependentUpon>DmNguonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DmNhomVatTu.cs" />
+    <Compile Include="Entities\DmNhomVatTu.Generated.cs">
+      <DependentUpon>DmNhomVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtChucNang.cs" />
+    <Compile Include="Entities\HtChucNang.Generated.cs">
+      <DependentUpon>HtChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtNguoiDung.cs" />
+    <Compile Include="Entities\HtNguoiDung.Generated.cs">
+      <DependentUpon>HtNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtNguoiDungVaiTro.cs" />
+    <Compile Include="Entities\HtNguoiDungVaiTro.Generated.cs">
+      <DependentUpon>HtNguoiDungVaiTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtPhanHe.cs" />
+    <Compile Include="Entities\HtPhanHe.Generated.cs">
+      <DependentUpon>HtPhanHe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtQuyenHan.cs" />
+    <Compile Include="Entities\HtQuyenHan.Generated.cs">
+      <DependentUpon>HtQuyenHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtThietLap.cs" />
+    <Compile Include="Entities\HtThietLap.Generated.cs">
+      <DependentUpon>HtThietLap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HtVaiTro.cs" />
+    <Compile Include="Entities\HtVaiTro.Generated.cs">
+      <DependentUpon>HtVaiTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhNhapXuat.cs" />
+    <Compile Include="Entities\KhNhapXuat.Generated.cs">
+      <DependentUpon>KhNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuChuyen.cs" />
+    <Compile Include="Entities\KhPhieuChuyen.Generated.cs">
+      <DependentUpon>KhPhieuChuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuChuyenCt.cs" />
+    <Compile Include="Entities\KhPhieuChuyenCt.Generated.cs">
+      <DependentUpon>KhPhieuChuyenCt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuChuyenSp.cs" />
+    <Compile Include="Entities\KhPhieuChuyenSp.Generated.cs">
+      <DependentUpon>KhPhieuChuyenSp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuNhap.cs" />
+    <Compile Include="Entities\KhPhieuNhap.Generated.cs">
+      <DependentUpon>KhPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuNhapCt.cs" />
+    <Compile Include="Entities\KhPhieuNhapCt.Generated.cs">
+      <DependentUpon>KhPhieuNhapCt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuNhapNb.cs" />
+    <Compile Include="Entities\KhPhieuNhapNb.Generated.cs">
+      <DependentUpon>KhPhieuNhapNb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuNhapNbCt.cs" />
+    <Compile Include="Entities\KhPhieuNhapNbCt.Generated.cs">
+      <DependentUpon>KhPhieuNhapNbCt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuXuat.cs" />
+    <Compile Include="Entities\KhPhieuXuat.Generated.cs">
+      <DependentUpon>KhPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuXuatCt.cs" />
+    <Compile Include="Entities\KhPhieuXuatCt.Generated.cs">
+      <DependentUpon>KhPhieuXuatCt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhPhieuXuatSp.cs" />
+    <Compile Include="Entities\KhPhieuXuatSp.Generated.cs">
+      <DependentUpon>KhPhieuXuatSp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\KhSanPham.cs" />
+    <Compile Include="Entities\KhSanPham.Generated.cs">
+      <DependentUpon>KhSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryDbContext.Generated.cs">
+      <DependentUpon>InventoryDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinqEntityBase.Generated.cs">
+      <DependentUpon>LinqEntityBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomDmLoaiVatTuGetDropDownResult.cs" />
+    <Compile Include="Models\CustomDmLoaiVatTuGetDropDownResult.Generated.cs">
+      <DependentUpon>CustomDmLoaiVatTuGetDropDownResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomDmLoaiVatTuGetListResult.cs" />
+    <Compile Include="Models\CustomDmLoaiVatTuGetListResult.Generated.cs">
+      <DependentUpon>CustomDmLoaiVatTuGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomGenKhPhieuChuyenGetSoPhieuResult.cs" />
+    <Compile Include="Models\CustomGenKhPhieuChuyenGetSoPhieuResult.Generated.cs">
+      <DependentUpon>CustomGenKhPhieuChuyenGetSoPhieuResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomGenKhPhieuNhapGetSoPhieuResult.cs" />
+    <Compile Include="Models\CustomGenKhPhieuNhapGetSoPhieuResult.Generated.cs">
+      <DependentUpon>CustomGenKhPhieuNhapGetSoPhieuResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomGenKhPhieuNhapNbGetSoPhieuResult.cs" />
+    <Compile Include="Models\CustomGenKhPhieuNhapNbGetSoPhieuResult.Generated.cs">
+      <DependentUpon>CustomGenKhPhieuNhapNbGetSoPhieuResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomGenKhPhieuXuatGetSoPhieuResult.cs" />
+    <Compile Include="Models\CustomGenKhPhieuXuatGetSoPhieuResult.Generated.cs">
+      <DependentUpon>CustomGenKhPhieuXuatGetSoPhieuResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtNgayThangGetValueResult.cs" />
+    <Compile Include="Models\CustomHtNgayThangGetValueResult.Generated.cs">
+      <DependentUpon>CustomHtNgayThangGetValueResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtNguoiDungGetDropDownResult.cs" />
+    <Compile Include="Models\CustomHtNguoiDungGetDropDownResult.Generated.cs">
+      <DependentUpon>CustomHtNguoiDungGetDropDownResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtNguoiDungGetListKhoHangResult.cs" />
+    <Compile Include="Models\CustomHtNguoiDungGetListKhoHangResult.Generated.cs">
+      <DependentUpon>CustomHtNguoiDungGetListKhoHangResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtNguoiDungGetListResult.cs" />
+    <Compile Include="Models\CustomHtNguoiDungGetListResult.Generated.cs">
+      <DependentUpon>CustomHtNguoiDungGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtNguoiDungGetListVaiTroResult.cs" />
+    <Compile Include="Models\CustomHtNguoiDungGetListVaiTroResult.Generated.cs">
+      <DependentUpon>CustomHtNguoiDungGetListVaiTroResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtQuyenHanGetListResult.cs" />
+    <Compile Include="Models\CustomHtQuyenHanGetListResult.Generated.cs">
+      <DependentUpon>CustomHtQuyenHanGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomHtVaiTroGetKhoHangResult.cs" />
+    <Compile Include="Models\CustomHtVaiTroGetKhoHangResult.Generated.cs">
+      <DependentUpon>CustomHtVaiTroGetKhoHangResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuChuyenGetListChiTietResult.cs" />
+    <Compile Include="Models\CustomKhPhieuChuyenGetListChiTietResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuChuyenGetListChiTietResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuChuyenGetListResult.cs" />
+    <Compile Include="Models\CustomKhPhieuChuyenGetListResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuChuyenGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapCheckDeleteResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapCheckDeleteResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapCheckDeleteResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapGetListChiTietNbResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapGetListChiTietNbResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapGetListChiTietNbResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapGetListChiTietResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapGetListChiTietResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapGetListChiTietResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapGetListResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapGetListResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapNbGetListChiTietResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapNbGetListChiTietResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapNbGetListChiTietResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuNhapNbGetListResult.cs" />
+    <Compile Include="Models\CustomKhPhieuNhapNbGetListResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuNhapNbGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuXuatGetListChiTietResult.cs" />
+    <Compile Include="Models\CustomKhPhieuXuatGetListChiTietResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuXuatGetListChiTietResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhPhieuXuatGetListResult.cs" />
+    <Compile Include="Models\CustomKhPhieuXuatGetListResult.Generated.cs">
+      <DependentUpon>CustomKhPhieuXuatGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhSanPhamGetListResult.cs" />
+    <Compile Include="Models\CustomKhSanPhamGetListResult.Generated.cs">
+      <DependentUpon>CustomKhSanPhamGetListResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomKhSanPhamGetSoLuongResult.cs" />
+    <Compile Include="Models\CustomKhSanPhamGetSoLuongResult.Generated.cs">
+      <DependentUpon>CustomKhSanPhamGetSoLuongResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangChuyenResult1.cs" />
+    <Compile Include="Models\CustomRpHangChuyenResult1.Generated.cs">
+      <DependentUpon>CustomRpHangChuyenResult1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangChuyenResult2.cs" />
+    <Compile Include="Models\CustomRpHangChuyenResult2.Generated.cs">
+      <DependentUpon>CustomRpHangChuyenResult2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangLuuKhoResult.cs" />
+    <Compile Include="Models\CustomRpHangLuuKhoResult.Generated.cs">
+      <DependentUpon>CustomRpHangLuuKhoResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangNhapResult1.cs" />
+    <Compile Include="Models\CustomRpHangNhapResult1.Generated.cs">
+      <DependentUpon>CustomRpHangNhapResult1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangNhapResult2.cs" />
+    <Compile Include="Models\CustomRpHangNhapResult2.Generated.cs">
+      <DependentUpon>CustomRpHangNhapResult2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangTonTheoKhoResult.cs" />
+    <Compile Include="Models\CustomRpHangTonTheoKhoResult.Generated.cs">
+      <DependentUpon>CustomRpHangTonTheoKhoResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangXuatResult1.cs" />
+    <Compile Include="Models\CustomRpHangXuatResult1.Generated.cs">
+      <DependentUpon>CustomRpHangXuatResult1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpHangXuatResult2.cs" />
+    <Compile Include="Models\CustomRpHangXuatResult2.Generated.cs">
+      <DependentUpon>CustomRpHangXuatResult2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomRpNhapXuatTonResult.cs" />
+    <Compile Include="Models\CustomRpNhapXuatTonResult.Generated.cs">
+      <DependentUpon>CustomRpNhapXuatTonResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImplementNamingStandardResult.cs" />
+    <Compile Include="Models\ImplementNamingStandardResult.Generated.cs">
+      <DependentUpon>ImplementNamingStandardResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\DmBoPhanExtensions.Generated.cs">
+      <DependentUpon>DmBoPhanExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmChiNhanhExtensions.Generated.cs">
+      <DependentUpon>DmChiNhanhExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmDonViTinhExtensions.Generated.cs">
+      <DependentUpon>DmDonViTinhExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmKhoHangExtensions.Generated.cs">
+      <DependentUpon>DmKhoHangExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmLoaiVatTuExtensions.Generated.cs">
+      <DependentUpon>DmLoaiVatTuExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmNguonKhoExtensions.Generated.cs">
+      <DependentUpon>DmNguonKhoExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmNguonNhapExtensions.Generated.cs">
+      <DependentUpon>DmNguonNhapExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DmNhomVatTuExtensions.Generated.cs">
+      <DependentUpon>DmNhomVatTuExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtChucNangExtensions.Generated.cs">
+      <DependentUpon>HtChucNangExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtNguoiDungExtensions.Generated.cs">
+      <DependentUpon>HtNguoiDungExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtNguoiDungVaiTroExtensions.Generated.cs">
+      <DependentUpon>HtNguoiDungVaiTroExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtPhanHeExtensions.Generated.cs">
+      <DependentUpon>HtPhanHeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtQuyenHanExtensions.Generated.cs">
+      <DependentUpon>HtQuyenHanExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtThietLapExtensions.Generated.cs">
+      <DependentUpon>HtThietLapExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\HtVaiTroExtensions.Generated.cs">
+      <DependentUpon>HtVaiTroExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhNhapXuatExtensions.Generated.cs">
+      <DependentUpon>KhNhapXuatExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuChuyenCtExtensions.Generated.cs">
+      <DependentUpon>KhPhieuChuyenCtExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuChuyenExtensions.Generated.cs">
+      <DependentUpon>KhPhieuChuyenExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuChuyenSpExtensions.Generated.cs">
+      <DependentUpon>KhPhieuChuyenSpExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuNhapCtExtensions.Generated.cs">
+      <DependentUpon>KhPhieuNhapCtExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuNhapExtensions.Generated.cs">
+      <DependentUpon>KhPhieuNhapExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuNhapNbCtExtensions.Generated.cs">
+      <DependentUpon>KhPhieuNhapNbCtExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuNhapNbExtensions.Generated.cs">
+      <DependentUpon>KhPhieuNhapNbExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuXuatCtExtensions.Generated.cs">
+      <DependentUpon>KhPhieuXuatCtExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuXuatExtensions.Generated.cs">
+      <DependentUpon>KhPhieuXuatExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhPhieuXuatSpExtensions.Generated.cs">
+      <DependentUpon>KhPhieuXuatSpExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\KhSanPhamExtensions.Generated.cs">
+      <DependentUpon>KhSanPhamExtensions.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Generate Include="INVENTORY.Data.csp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="INVENTORY.dbml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\CodeSmith\CodeSmith.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

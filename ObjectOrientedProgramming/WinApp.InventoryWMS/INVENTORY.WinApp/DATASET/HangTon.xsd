@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HangTon" targetNamespace="http://tempuri.org/TongHopTon1.xsd" xmlns:mstns="http://tempuri.org/TongHopTon1.xsd" xmlns="http://tempuri.org/TongHopTon1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HangTon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HangTon" msprop:Generator_UserDSName="HangTon">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HangTonKho" msprop:Generator_UserTableName="HangTonKho" msprop:Generator_RowEvArgName="HangTonKhoRowChangeEvent" msprop:Generator_TableVarName="tableHangTonKho" msprop:Generator_TablePropName="HangTonKho" msprop:Generator_RowDeletingName="HangTonKhoRowDeleting" msprop:Generator_RowChangingName="HangTonKhoRowChanging" msprop:Generator_RowDeletedName="HangTonKhoRowDeleted" msprop:Generator_RowEvHandlerName="HangTonKhoRowChangeEventHandler" msprop:Generator_TableClassName="HangTonKhoDataTable" msprop:Generator_RowChangedName="HangTonKhoRowChanged" msprop:Generator_RowClassName="HangTonKhoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenKhoHang" msprop:Generator_ColumnVarNameInTable="columnTenKhoHang" msprop:Generator_ColumnPropNameInRow="TenKhoHang" msprop:Generator_ColumnPropNameInTable="TenKhoHangColumn" msprop:Generator_UserColumnName="TenKhoHang" type="xs:string" minOccurs="0" />
+              <xs:element name="TenNhomVatTu" msprop:Generator_ColumnVarNameInTable="columnTenNhomVatTu" msprop:Generator_ColumnPropNameInRow="TenNhomVatTu" msprop:Generator_ColumnPropNameInTable="TenNhomVatTuColumn" msprop:Generator_UserColumnName="TenNhomVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="TenLoaiVatTu" msprop:Generator_ColumnVarNameInTable="columnTenLoaiVatTu" msprop:Generator_ColumnPropNameInRow="TenLoaiVatTu" msprop:Generator_ColumnPropNameInTable="TenLoaiVatTuColumn" msprop:Generator_UserColumnName="TenLoaiVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="QuyCach" msprop:Generator_ColumnVarNameInTable="columnQuyCach" msprop:Generator_ColumnPropNameInRow="QuyCach" msprop:Generator_ColumnPropNameInTable="QuyCachColumn" msprop:Generator_UserColumnName="QuyCach" type="xs:string" minOccurs="0" />
+              <xs:element name="TenDonViTinh" msprop:Generator_ColumnVarNameInTable="columnTenDonViTinh" msprop:Generator_ColumnPropNameInRow="TenDonViTinh" msprop:Generator_ColumnPropNameInTable="TenDonViTinhColumn" msprop:Generator_UserColumnName="TenDonViTinh" type="xs:string" minOccurs="0" />
+              <xs:element name="TonCuoi" msprop:Generator_ColumnVarNameInTable="columnTonCuoi" msprop:Generator_ColumnPropNameInRow="TonCuoi" msprop:Generator_ColumnPropNameInTable="TonCuoiColumn" msprop:Generator_UserColumnName="TonCuoi" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HangTonNhom" msprop:Generator_TableClassName="HangTonNhomDataTable" msprop:Generator_TableVarName="tableHangTonNhom" msprop:Generator_RowChangedName="HangTonNhomRowChanged" msprop:Generator_TablePropName="HangTonNhom" msprop:Generator_RowDeletingName="HangTonNhomRowDeleting" msprop:Generator_RowChangingName="HangTonNhomRowChanging" msprop:Generator_RowEvHandlerName="HangTonNhomRowChangeEventHandler" msprop:Generator_RowDeletedName="HangTonNhomRowDeleted" msprop:Generator_RowClassName="HangTonNhomRow" msprop:Generator_UserTableName="HangTonNhom" msprop:Generator_RowEvArgName="HangTonNhomRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdNhomVatTu" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnIdNhomVatTu" msprop:Generator_ColumnPropNameInRow="IdNhomVatTu" msprop:Generator_ColumnPropNameInTable="IdNhomVatTuColumn" msprop:Generator_UserColumnName="IdNhomVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="TenNhomVatTu" msprop:Generator_ColumnVarNameInTable="columnTenNhomVatTu" msprop:Generator_ColumnPropNameInRow="TenNhomVatTu" msprop:Generator_ColumnPropNameInTable="TenNhomVatTuColumn" msprop:Generator_UserColumnName="TenNhomVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HangTonLoai" msprop:Generator_TableClassName="HangTonLoaiDataTable" msprop:Generator_TableVarName="tableHangTonLoai" msprop:Generator_RowChangedName="HangTonLoaiRowChanged" msprop:Generator_TablePropName="HangTonLoai" msprop:Generator_RowDeletingName="HangTonLoaiRowDeleting" msprop:Generator_RowChangingName="HangTonLoaiRowChanging" msprop:Generator_RowEvHandlerName="HangTonLoaiRowChangeEventHandler" msprop:Generator_RowDeletedName="HangTonLoaiRowDeleted" msprop:Generator_RowClassName="HangTonLoaiRow" msprop:Generator_UserTableName="HangTonLoai" msprop:Generator_RowEvArgName="HangTonLoaiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdNhomVatTu" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnIdNhomVatTu" msprop:Generator_ColumnPropNameInRow="IdNhomVatTu" msprop:Generator_ColumnPropNameInTable="IdNhomVatTuColumn" msprop:Generator_UserColumnName="IdNhomVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="TenLoaiVatTu" msprop:Generator_ColumnVarNameInTable="columnTenLoaiVatTu" msprop:Generator_ColumnPropNameInRow="TenLoaiVatTu" msprop:Generator_ColumnPropNameInTable="TenLoaiVatTuColumn" msprop:Generator_UserColumnName="TenLoaiVatTu" type="xs:string" minOccurs="0" />
+              <xs:element name="QuyCach" msprop:Generator_ColumnVarNameInTable="columnQuyCach" msprop:Generator_ColumnPropNameInRow="QuyCach" msprop:Generator_ColumnPropNameInTable="QuyCachColumn" msprop:Generator_UserColumnName="QuyCach" type="xs:string" minOccurs="0" />
+              <xs:element name="TenDonViTinh" msprop:Generator_ColumnVarNameInTable="columnTenDonViTinh" msprop:Generator_ColumnPropNameInRow="TenDonViTinh" msprop:Generator_ColumnPropNameInTable="TenDonViTinhColumn" msprop:Generator_UserColumnName="TenDonViTinh" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="ChuThich" msprop:Generator_ColumnVarNameInTable="columnChuThich" msprop:Generator_ColumnPropNameInRow="ChuThich" msprop:Generator_ColumnPropNameInTable="ChuThichColumn" msprop:Generator_UserColumnName="ChuThich" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="HangTonNhomLoai" msdata:parent="HangTonNhom" msdata:child="HangTonLoai" msdata:parentkey="IdNhomVatTu" msdata:childkey="IdNhomVatTu" msprop:Generator_UserChildTable="HangTonLoai" msprop:Generator_ChildPropName="GetHangTonLoaiRows" msprop:Generator_UserRelationName="HangTonNhomLoai" msprop:Generator_ParentPropName="HangTonMatRow" msprop:Generator_RelationVarName="relationHangTonNhomLoai" msprop:Generator_UserParentTable="HangTonNhom" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
