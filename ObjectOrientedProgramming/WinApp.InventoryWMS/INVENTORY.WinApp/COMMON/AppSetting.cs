@@ -49,7 +49,7 @@ public class AppSetting
 
     public static string MessageCaption()
     {
-        return entThietLap != null ? entThietLap.TenPhanMem : "MTSoftware Inventory";
+        return entThietLap != null ? entThietLap.TenPhanMem : "Inventory WMS";
     }
 
     public static string Setting_GetList()

@@ -8,3 +8,9 @@ D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.
 D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CopyComplete
 D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.dll
 D:\Working\GitHub\MTWarehouseOOP\INVENTORY.Data\obj\Debug\INVENTORY.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\INVENTORY.Data.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\INVENTORY.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CopyComplete
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.pdb

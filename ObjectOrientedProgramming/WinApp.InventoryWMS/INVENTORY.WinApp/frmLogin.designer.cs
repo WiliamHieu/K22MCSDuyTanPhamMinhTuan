@@ -92,7 +92,7 @@
             this.GroupInfor.Name = "GroupInfor";
             this.GroupInfor.Size = new System.Drawing.Size(463, 224);
             this.GroupInfor.TabIndex = 0;
-            this.GroupInfor.Text = "MTSoftware Inventory";
+            this.GroupInfor.Text = "Inventory WMS";
             // 
             // PanelError
             // 
