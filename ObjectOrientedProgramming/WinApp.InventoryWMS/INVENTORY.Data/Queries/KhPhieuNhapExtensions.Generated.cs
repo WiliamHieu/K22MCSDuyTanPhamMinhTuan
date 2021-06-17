@@ -48,20 +48,6 @@ namespace INVENTORY.Data
         }
 
         /// <summary>
-        /// Gets an instance by using a unique index.
-        /// </summary>
-        /// <returns>An instance of the entity or null if not found.</returns>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public static INVENTORY.Data.KhPhieuNhap GetByIdPhieuXuat(this IQueryable<INVENTORY.Data.KhPhieuNhap> queryable, System.Guid? idPhieuXuat)
-        {
-            var entity = queryable as System.Data.Linq.Table<INVENTORY.Data.KhPhieuNhap>;
-            if (entity != null && entity.Context.LoadOptions == null)
-                return Query.GetByIdPhieuXuat.Invoke((INVENTORY.Data.InventoryDbContext)entity.Context, idPhieuXuat);
-
-            return queryable.FirstOrDefault(k => object.Equals(k.IdPhieuXuat, idPhieuXuat));
-        }
-
-        /// <summary>
         /// Gets a query for <see cref="INVENTORY.Data.KhPhieuNhap.Id"/>.
         /// </summary>
         /// <param name="queryable">Query to append where clause.</param>
@@ -437,89 +423,6 @@ namespace INVENTORY.Data
         {
             // creating dynamic expression to support nulls
             var expression = DynamicExpression.BuildExpression<INVENTORY.Data.KhPhieuNhap, bool>("IdKhoChuyen", values);
-            return queryable.Where(expression);
-        }
-
-        /// <summary>
-        /// Gets a query for <see cref="INVENTORY.Data.KhPhieuNhap.IdPhieuXuat"/>.
-        /// </summary>
-        /// <param name="queryable">Query to append where clause.</param>
-        /// <param name="idPhieuXuat">IdPhieuXuat to search for.</param>
-        /// <returns><see cref="IQueryable"/> with additional where clause.</returns>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public static IQueryable<INVENTORY.Data.KhPhieuNhap> ByIdPhieuXuat(this IQueryable<INVENTORY.Data.KhPhieuNhap> queryable, System.Guid? idPhieuXuat)
-        {
-            // support nulls
-            return idPhieuXuat == null 
-                ? queryable.Where(k => k.IdPhieuXuat == null) 
-                : queryable.Where(k => k.IdPhieuXuat == idPhieuXuat);
-        }
-
-        /// <summary>
-        /// Gets a query for <see cref="INVENTORY.Data.KhPhieuNhap.IdPhieuXuat"/>.
-        /// </summary>
-        /// <param name="queryable">Query to append where clause.</param>
-        /// <param name="idPhieuXuat">IdPhieuXuat to search for. This is on the right side of the operator.</param>
-        /// <param name="comparisonOperator">The comparison operator.</param>
-        /// <returns><see cref="IQueryable"/> with additional where clause.</returns>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public static IQueryable<INVENTORY.Data.KhPhieuNhap> ByIdPhieuXuat(this IQueryable<INVENTORY.Data.KhPhieuNhap> queryable, ComparisonOperator comparisonOperator, System.Guid? idPhieuXuat)
-        {
-            if (idPhieuXuat == null && comparisonOperator != ComparisonOperator.Equals && comparisonOperator != ComparisonOperator.NotEquals)
-                throw new ArgumentNullException("idPhieuXuat", "Parameter 'idPhieuXuat' cannot be null with the specified ComparisonOperator.  Parameter 'comparisonOperator' must be ComparisonOperator.Equals or ComparisonOperator.NotEquals to support null.");
-
-            switch (comparisonOperator)
-            {
-                case ComparisonOperator.GreaterThan:
-                case ComparisonOperator.GreaterThanOrEquals:
-                case ComparisonOperator.LessThan:
-                case ComparisonOperator.LessThanOrEquals:
-                    throw new ArgumentException("Parameter 'comparisonOperator' must be ComparisonOperator.Equals or ComparisonOperator.NotEquals to support System.Guid? type.", "comparisonOperator");
-                case ComparisonOperator.NotEquals:
-                    return idPhieuXuat == null 
-                        ? queryable.Where(k => k.IdPhieuXuat != null) 
-                        : queryable.Where(k => k.IdPhieuXuat != idPhieuXuat);
-                default:
-                    return idPhieuXuat == null 
-                        ? queryable.Where(k => k.IdPhieuXuat == null) 
-                        : queryable.Where(k => k.IdPhieuXuat == idPhieuXuat);
-            }
-        }
-
-        /// <summary>
-        /// Gets a query for <see cref="INVENTORY.Data.KhPhieuNhap.IdPhieuXuat"/>.
-        /// </summary>
-        /// <param name="queryable">Query to append where clause.</param>
-        /// <param name="idPhieuXuat">IdPhieuXuat to search for.</param>
-        /// <param name="additionalValues">Additional values to search for.</param>
-        /// <returns><see cref="IQueryable"/> with additional where clause.</returns>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public static IQueryable<INVENTORY.Data.KhPhieuNhap> ByIdPhieuXuat(this IQueryable<INVENTORY.Data.KhPhieuNhap> queryable, System.Guid? idPhieuXuat, params System.Guid?[] additionalValues)
-        {
-            var idPhieuXuatList = new List<System.Guid?> { idPhieuXuat };
-
-            if (additionalValues != null)
-                idPhieuXuatList.AddRange(additionalValues);
-            else
-                idPhieuXuatList.Add(null);
-
-            if (idPhieuXuatList.Count == 1)
-                return queryable.ByIdPhieuXuat(idPhieuXuatList[0]);
-
-            return queryable.ByIdPhieuXuat(idPhieuXuatList);
-        }
-
-        /// <summary>
-        /// Gets a query for <see cref="INVENTORY.Data.KhPhieuNhap.IdPhieuXuat"/>.
-        /// </summary>
-        /// <param name="queryable">Query to append where clause.</param>
-        /// <param name="values">The values to search for..</param>
-        /// <returns><see cref="IQueryable"/> with additional where clause.</returns>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public static IQueryable<INVENTORY.Data.KhPhieuNhap> ByIdPhieuXuat(this IQueryable<INVENTORY.Data.KhPhieuNhap> queryable, IEnumerable<System.Guid?> values)
-        {
-            // creating dynamic expression to support nulls
-            var expression = DynamicExpression.BuildExpression<INVENTORY.Data.KhPhieuNhap, bool>("IdPhieuXuat", values);
             return queryable.Where(expression);
         }
 
@@ -1053,11 +956,6 @@ namespace INVENTORY.Data
                 System.Data.Linq.CompiledQuery.Compile(
                     (INVENTORY.Data.InventoryDbContext db, System.Guid id) =>
                         db.KhPhieuNhap.FirstOrDefault(k => k.Id == id));
-            [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-            internal static readonly Func<INVENTORY.Data.InventoryDbContext, System.Guid?, INVENTORY.Data.KhPhieuNhap> GetByIdPhieuXuat =
-                System.Data.Linq.CompiledQuery.Compile(
-                    (INVENTORY.Data.InventoryDbContext db, System.Guid? idPhieuXuat) =>
-                        db.KhPhieuNhap.FirstOrDefault(k => object.Equals(k.IdPhieuXuat, idPhieuXuat)));
 
         }
         #endregion

@@ -28,8 +28,6 @@ namespace INVENTORY.Data
             [Required]
             public string SoPhieu { get; set; }
 
-            public int LoaiXuat { get; set; }
-
             public System.Guid IdBoPhan { get; set; }
 
             public int IdNguoiNhan { get; set; }
@@ -44,8 +42,6 @@ namespace INVENTORY.Data
 
             [DataType(System.ComponentModel.DataAnnotations.DataType.MultilineText)]
             public string ChuThich { get; set; }
-
-            public KhPhieuNhap PhieuXuatKhPhieuNhap { get; set; }
 
             public DmBoPhan BoPhanDmBoPhan { get; set; }
 

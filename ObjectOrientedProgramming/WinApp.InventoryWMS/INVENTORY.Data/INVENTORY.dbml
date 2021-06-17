@@ -247,7 +247,6 @@
       <Column Name="IdNguonNhap" Storage="_idNguonNhap" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
       <Column Name="IdPhieuChuyen" Storage="_idPhieuChuyen" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
       <Column Name="IdKhoChuyen" Storage="_idKhoChuyen" Type="System.Int32" DbType="int" CanBeNull="true" />
-      <Column Name="IdPhieuXuat" Storage="_idPhieuXuat" Type="System.Guid" DbType="uniqueidentifier" CanBeNull="true" />
       <Column Name="LoaiNhap" Storage="_loaiNhap" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
       <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
       <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
@@ -259,7 +258,6 @@
       <Association Name="DmKhoHang_KhPhieuNhap1" Member="KhoChuyenDmKhoHang" Storage="_khoChuyenDmKhoHang" ThisKey="IdKhoChuyen" Type="DmKhoHang" IsForeignKey="true" />
       <Association Name="DmNguonNhap_KhPhieuNhap" Member="NguonNhapDmNguonNhap" Storage="_nguonNhapDmNguonNhap" ThisKey="IdNguonNhap" Type="DmNguonNhap" IsForeignKey="true" />
       <Association Name="KhPhieuChuyen_KhPhieuNhap" Member="PhieuChuyenKhPhieuChuyen" Storage="_phieuChuyenKhPhieuChuyen" ThisKey="IdPhieuChuyen" Type="KhPhieuChuyen" IsForeignKey="true" />
-      <Association Name="KhPhieuXuat_KhPhieuNhap" Member="PhieuXuatKhPhieuXuat" Storage="_phieuXuatKhPhieuXuat" ThisKey="IdPhieuXuat" Type="KhPhieuXuat" IsForeignKey="true" />
       <Association Name="KhPhieuNhap_KhPhieuNhapCt" Member="PhieuNhapKhPhieuNhapCtList" Storage="_phieuNhapKhPhieuNhapCtList" OtherKey="IdPhieuNhap" Type="KhPhieuNhapCt" DeleteOnNull="false" />
       <Association Name="KhPhieuNhap_KhPhieuNhapNb" Member="PhieuNhapKhPhieuNhapNbList" Storage="_phieuNhapKhPhieuNhapNbList" OtherKey="IdPhieuNhap" Type="KhPhieuNhapNb" DeleteOnNull="false" />
     </Type>
@@ -320,7 +318,6 @@
       <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
       <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiXuat" Storage="_loaiXuat" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
       <Column Name="IdBoPhan" Storage="_idBoPhan" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
       <Column Name="IdNguoiNhan" Storage="_idNguoiNhan" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
       <Column Name="IdNguoiTao" Storage="_idNguoiTao" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
@@ -328,7 +325,6 @@
       <Column Name="NgayTaoDate" Storage="_ngayTaoDate" Type="System.DateTime" DbType="date NOT NULL" CanBeNull="false" />
       <Column Name="UpdateTon" Storage="_updateTon" Type="System.Boolean" DbType="bit NOT NULL" CanBeNull="false" />
       <Column Name="ChuThich" Storage="_chuThich" Type="System.String" DbType="nvarchar(300)" CanBeNull="true" />
-      <Association Name="KhPhieuXuat_KhPhieuNhap" Member="PhieuXuatKhPhieuNhap" Storage="_phieuXuatKhPhieuNhap" OtherKey="IdPhieuXuat" Type="KhPhieuNhap" Cardinality="One" DeleteOnNull="false" />
       <Association Name="DmBoPhan_KhPhieuXuat" Member="BoPhanDmBoPhan" Storage="_boPhanDmBoPhan" ThisKey="IdBoPhan" Type="DmBoPhan" IsForeignKey="true" />
       <Association Name="DmKhoHang_KhPhieuXuat" Member="KhoHangDmKhoHang" Storage="_khoHangDmKhoHang" ThisKey="IdKhoHang" Type="DmKhoHang" IsForeignKey="true" />
       <Association Name="KhPhieuXuat_KhPhieuXuatCt" Member="PhieuXuatKhPhieuXuatCtList" Storage="_phieuXuatKhPhieuXuatCtList" OtherKey="IdPhieuXuat" Type="KhPhieuXuatCt" DeleteOnNull="false" />
@@ -601,10 +597,8 @@
     <ElementType Name="CustomKhPhieuXuatGetListResult">
       <Column Name="Id" Storage="_id" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
       <Column Name="IdKhoHang" Storage="_idKhoHang" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiXuat" Storage="_loaiXuat" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
       <Column Name="IdBoPhan" Storage="_idBoPhan" Type="System.Guid" DbType="uniqueidentifier NOT NULL" CanBeNull="false" />
       <Column Name="SoPhieu" Storage="_soPhieu" Type="System.String" DbType="nvarchar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenLoaiXuat" Storage="_tenLoaiXuat" Type="System.String" DbType="nvarchar(8)" CanBeNull="true" />
       <Column Name="TenBoPhan" Storage="_tenBoPhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
       <Column Name="TenNguoiNhan" Storage="_tenNguoiNhan" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
       <Column Name="TenNguoiTao" Storage="_tenNguoiTao" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />

@@ -50,7 +50,6 @@ namespace INVENTORY.Data
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         private void Initialize()
         {
-            _phieuXuatKhPhieuNhap = default(System.Data.Linq.EntityRef<KhPhieuNhap>);
             _boPhanDmBoPhan = default(System.Data.Linq.EntityRef<DmBoPhan>);
             _khoHangDmKhoHang = default(System.Data.Linq.EntityRef<DmKhoHang>);
             _phieuXuatKhPhieuXuatCtList = new System.Data.Linq.EntitySet<KhPhieuXuatCt>(OnPhieuXuatKhPhieuXuatCtListAdd, OnPhieuXuatKhPhieuXuatCtListRemove);
@@ -141,38 +140,13 @@ namespace INVENTORY.Data
         }
 
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        private int _loaiXuat;
-
-        /// <summary>
-        /// Gets or sets the LoaiXuat column value.
-        /// </summary>
-        [System.Data.Linq.Mapping.Column(Name = "LoaiXuat", Storage = "_loaiXuat", DbType = "int NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 4)]
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public int LoaiXuat
-        {
-            get { return _loaiXuat; }
-            set
-            {
-                if (_loaiXuat != value)
-                {
-                    OnLoaiXuatChanging(value);
-                    SendPropertyChanging("LoaiXuat");
-                    _loaiXuat = value;
-                    SendPropertyChanged("LoaiXuat");
-                    OnLoaiXuatChanged();
-                }
-            }
-        }
-
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         private System.Guid _idBoPhan;
 
         /// <summary>
         /// Gets or sets the IdBoPhan column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "IdBoPhan", Storage = "_idBoPhan", DbType = "uniqueidentifier NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 5)]
+        [System.Runtime.Serialization.DataMember(Order = 4)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public System.Guid IdBoPhan
         {
@@ -201,7 +175,7 @@ namespace INVENTORY.Data
         /// Gets or sets the IdNguoiNhan column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "IdNguoiNhan", Storage = "_idNguoiNhan", DbType = "int NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 6)]
+        [System.Runtime.Serialization.DataMember(Order = 5)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public int IdNguoiNhan
         {
@@ -226,7 +200,7 @@ namespace INVENTORY.Data
         /// Gets or sets the IdNguoiTao column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "IdNguoiTao", Storage = "_idNguoiTao", DbType = "int NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 7)]
+        [System.Runtime.Serialization.DataMember(Order = 6)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public int IdNguoiTao
         {
@@ -251,7 +225,7 @@ namespace INVENTORY.Data
         /// Gets or sets the NgayTao column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "NgayTao", Storage = "_ngayTao", DbType = "datetime NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 8)]
+        [System.Runtime.Serialization.DataMember(Order = 7)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public System.DateTime NgayTao
         {
@@ -276,7 +250,7 @@ namespace INVENTORY.Data
         /// Gets or sets the NgayTaoDate column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "NgayTaoDate", Storage = "_ngayTaoDate", DbType = "date NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 9)]
+        [System.Runtime.Serialization.DataMember(Order = 8)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public System.DateTime NgayTaoDate
         {
@@ -301,7 +275,7 @@ namespace INVENTORY.Data
         /// Gets or sets the UpdateTon column value.
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "UpdateTon", Storage = "_updateTon", DbType = "bit NOT NULL", CanBeNull = false)]
-        [System.Runtime.Serialization.DataMember(Order = 10)]
+        [System.Runtime.Serialization.DataMember(Order = 9)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public bool UpdateTon
         {
@@ -327,7 +301,7 @@ namespace INVENTORY.Data
         /// </summary>
         [System.Data.Linq.Mapping.Column(Name = "ChuThich", Storage = "_chuThich", DbType = "nvarchar(300)")]
         [System.ComponentModel.DataAnnotations.StringLength(300)]
-        [System.Runtime.Serialization.DataMember(Order = 11)]
+        [System.Runtime.Serialization.DataMember(Order = 10)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public string ChuThich
         {
@@ -349,51 +323,13 @@ namespace INVENTORY.Data
         #region Association Mapped Properties
 
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        private System.Data.Linq.EntityRef<KhPhieuNhap> _phieuXuatKhPhieuNhap;
-
-        /// <summary>
-        /// Gets or sets the <see cref="KhPhieuNhap"/> association.
-        /// </summary>
-        [System.Data.Linq.Mapping.Association(Name = "KhPhieuXuat_KhPhieuNhap", Storage = "_phieuXuatKhPhieuNhap", ThisKey = "Id", OtherKey = "IdPhieuXuat", IsUnique = true)]
-        [System.Runtime.Serialization.DataMember(Order = 12, EmitDefaultValue = false)]
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        public KhPhieuNhap PhieuXuatKhPhieuNhap
-        {
-            get { return (serializing && !_phieuXuatKhPhieuNhap.HasLoadedOrAssignedValue) ? null : _phieuXuatKhPhieuNhap.Entity; }
-            set
-            {
-                KhPhieuNhap previousValue = _phieuXuatKhPhieuNhap.Entity;
-                if (previousValue != value || _phieuXuatKhPhieuNhap.HasLoadedOrAssignedValue == false)
-                {
-                    OnPhieuXuatKhPhieuNhapChanging(value);
-                    SendPropertyChanging("PhieuXuatKhPhieuNhap");
-                    if (previousValue != null)
-                    {
-                        _phieuXuatKhPhieuNhap.Entity = null;
-                        previousValue.PhieuXuatKhPhieuXuat = null;
-                    }
-                    _phieuXuatKhPhieuNhap.Entity = value;
-                    if (value != null)
-                    {
-                        value.PhieuXuatKhPhieuXuat = this;
-                    }
-                    SendPropertyChanged("PhieuXuatKhPhieuNhap");
-                    OnPhieuXuatKhPhieuNhapChanged();
-                }
-            }
-        }
-        
-        
-        
-
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         private System.Data.Linq.EntityRef<DmBoPhan> _boPhanDmBoPhan;
 
         /// <summary>
         /// Gets or sets the <see cref="DmBoPhan"/> association.
         /// </summary>
         [System.Data.Linq.Mapping.Association(Name = "DmBoPhan_KhPhieuXuat", Storage = "_boPhanDmBoPhan", ThisKey = "IdBoPhan", OtherKey = "Id", IsForeignKey = true)]
-        [System.Runtime.Serialization.DataMember(Order = 13, EmitDefaultValue = false)]
+        [System.Runtime.Serialization.DataMember(Order = 11, EmitDefaultValue = false)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public DmBoPhan BoPhanDmBoPhan
         {
@@ -436,7 +372,7 @@ namespace INVENTORY.Data
         /// Gets or sets the <see cref="DmKhoHang"/> association.
         /// </summary>
         [System.Data.Linq.Mapping.Association(Name = "DmKhoHang_KhPhieuXuat", Storage = "_khoHangDmKhoHang", ThisKey = "IdKhoHang", OtherKey = "Id", IsForeignKey = true)]
-        [System.Runtime.Serialization.DataMember(Order = 14, EmitDefaultValue = false)]
+        [System.Runtime.Serialization.DataMember(Order = 12, EmitDefaultValue = false)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public DmKhoHang KhoHangDmKhoHang
         {
@@ -479,7 +415,7 @@ namespace INVENTORY.Data
         /// Gets or sets the <see cref="KhPhieuXuatCt"/> association.
         /// </summary>
         [System.Data.Linq.Mapping.Association(Name = "KhPhieuXuat_KhPhieuXuatCt", Storage = "_phieuXuatKhPhieuXuatCtList", ThisKey = "Id", OtherKey = "IdPhieuXuat")]
-        [System.Runtime.Serialization.DataMember(Order=15, EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMember(Order=13, EmitDefaultValue=false)]
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         public System.Data.Linq.EntitySet<KhPhieuXuatCt> PhieuXuatKhPhieuXuatCtList
         {
@@ -542,13 +478,6 @@ namespace INVENTORY.Data
         /// <summary>Called after <see cref="SoPhieu"/> has Changed.</summary>
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         partial void OnSoPhieuChanged();
-        /// <summary>Called when <see cref="LoaiXuat"/> is changing.</summary>
-        /// <param name="value">The new value.</param>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        partial void OnLoaiXuatChanging(int value);
-        /// <summary>Called after <see cref="LoaiXuat"/> has Changed.</summary>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        partial void OnLoaiXuatChanged();
         /// <summary>Called when <see cref="IdBoPhan"/> is changing.</summary>
         /// <param name="value">The new value.</param>
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
@@ -598,13 +527,6 @@ namespace INVENTORY.Data
         /// <summary>Called after <see cref="ChuThich"/> has Changed.</summary>
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
         partial void OnChuThichChanged();
-        /// <summary>Called when <see cref="PhieuXuatKhPhieuNhap"/> is changing.</summary>
-        /// <param name="value">The new value.</param>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        partial void OnPhieuXuatKhPhieuNhapChanging(KhPhieuNhap value);
-        /// <summary>Called after <see cref="PhieuXuatKhPhieuNhap"/> has Changed.</summary>
-        [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
-        partial void OnPhieuXuatKhPhieuNhapChanged();
         /// <summary>Called when <see cref="BoPhanDmBoPhan"/> is changing.</summary>
         /// <param name="value">The new value.</param>
         [System.CodeDom.Compiler.GeneratedCode("CodeSmith", "6.0.0.0")]
@@ -744,7 +666,6 @@ namespace INVENTORY.Data
                 return;
 
             base.Detach();
-            _phieuXuatKhPhieuNhap = Detach(_phieuXuatKhPhieuNhap);
             _boPhanDmBoPhan = Detach(_boPhanDmBoPhan);
             _khoHangDmKhoHang = Detach(_khoHangDmKhoHang);
             _phieuXuatKhPhieuXuatCtList = Detach(_phieuXuatKhPhieuXuatCtList, OnPhieuXuatKhPhieuXuatCtListAdd, OnPhieuXuatKhPhieuXuatCtListRemove);

@@ -140,6 +140,11 @@ namespace INVENTORY.WinApp.DANHMUC
                         entCatalogOld.ChuThich = MTString.TextClean(txtChuThich.EditValue);
                         entCatalogOld.TrangThai = MTCheckbox.Int32Value(chkTrangThai.CheckState);
                         dbContext.SubmitChanges();
+
+                        if (AppSetting.entChiNhanh.Id == entCatalogOld.Id)
+                        {
+                            AppSetting.entChiNhanh = entCatalogOld;
+                        }
                     }
                 }
                 updateStatus = true;

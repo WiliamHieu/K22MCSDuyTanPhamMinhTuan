@@ -25,14 +25,10 @@ namespace INVENTORY.Data
 
             public int IdKhoHang { get; set; }
 
-            public int LoaiXuat { get; set; }
-
             public System.Guid IdBoPhan { get; set; }
 
             [Required]
             public string SoPhieu { get; set; }
-
-            public string TenLoaiXuat { get; set; }
 
             [Required]
             public string TenBoPhan { get; set; }

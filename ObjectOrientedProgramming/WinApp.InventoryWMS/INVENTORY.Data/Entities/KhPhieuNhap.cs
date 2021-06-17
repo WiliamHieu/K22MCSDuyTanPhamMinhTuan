@@ -31,8 +31,6 @@ namespace INVENTORY.Data
 
             public int? IdKhoChuyen { get; set; }
 
-            public System.Guid? IdPhieuXuat { get; set; }
-
             public int LoaiNhap { get; set; }
 
             [Required]
@@ -56,8 +54,6 @@ namespace INVENTORY.Data
             public DmNguonNhap NguonNhapDmNguonNhap { get; set; }
 
             public KhPhieuChuyen PhieuChuyenKhPhieuChuyen { get; set; }
-
-            public KhPhieuXuat PhieuXuatKhPhieuXuat { get; set; }
 
             public EntitySet<KhPhieuNhapCt> PhieuNhapKhPhieuNhapCtList { get; set; }
 
