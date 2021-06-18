@@ -517,6 +517,13 @@ D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.Inve
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\Inventory WMS.exe.config
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\Inventory WMS.exe
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\Inventory WMS.pdb
-D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\obj\Debug\Inventory WMS.exe.licenses
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\obj\Debug\Inventory WMS.exe
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\obj\Debug\Inventory WMS.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\ExcelApi.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\MTLibrary.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\NetOffice.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\OfficeApi.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\ExcelApi.xml
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\MTLibrary.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\NetOffice.xml
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.WinApp\bin\Debug\OfficeApi.xml

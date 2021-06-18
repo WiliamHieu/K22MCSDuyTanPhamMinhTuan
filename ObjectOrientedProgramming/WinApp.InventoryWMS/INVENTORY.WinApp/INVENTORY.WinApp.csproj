@@ -71,11 +71,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CodeSmith.Data">
-      <HintPath>..\INVENTORY.Data\bin\Debug\CodeSmith.Data.dll</HintPath>
+    <Reference Include="CodeSmith.Data, Version=5.0.0.0, Culture=neutral, PublicKeyToken=596a5eee5d207fdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\CodeSmith.Data.dll</HintPath>
     </Reference>
-    <Reference Include="CodeSmith.Data.LinqToSql">
-      <HintPath>..\INVENTORY.Data\bin\Debug\CodeSmith.Data.LinqToSql.dll</HintPath>
+    <Reference Include="CodeSmith.Data.LinqToSql, Version=5.0.0.0, Culture=neutral, PublicKeyToken=596a5eee5d207fdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\CodeSmith.Data.LinqToSql.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -128,18 +130,18 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ExcelApi">
-      <HintPath>..\..\..\CodeTemplate\DLL\ExcelApi.dll</HintPath>
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\ExcelApi.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="MTLibrary">
-      <HintPath>..\..\MTLibrary\MTLibrary\bin\Release\MTLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\MTLibrary\MTLibrary\bin\Release\MTLibrary.dll</HintPath>
     </Reference>
     <Reference Include="NetOffice">
-      <HintPath>..\..\..\CodeTemplate\DLL\NetOffice.dll</HintPath>
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\NetOffice.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="OfficeApi">
-      <HintPath>..\..\..\CodeTemplate\DLL\OfficeApi.dll</HintPath>
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\OfficeApi.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System">
@@ -728,7 +730,6 @@
     <EmbeddedResource Include="KHOHANG\frmPhieuXuatEdit.resx">
       <DependentUpon>frmPhieuXuatEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

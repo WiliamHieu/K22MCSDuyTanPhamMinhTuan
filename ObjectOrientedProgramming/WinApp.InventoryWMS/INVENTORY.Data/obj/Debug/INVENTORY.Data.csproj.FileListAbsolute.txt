@@ -14,3 +14,17 @@ D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.Inve
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.csproj.CopyComplete
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.dll
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\Microsoft.CSharp.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.ComponentModel.DataAnnotations.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Configuration.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Data.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Data.Linq.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Data.Services.Client.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Data.Services.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Runtime.Serialization.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Web.DynamicData.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Xml.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\bin\Debug\System.Xml.Linq.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Debug\INVENTORY.Data.csprojAssemblyReference.cache

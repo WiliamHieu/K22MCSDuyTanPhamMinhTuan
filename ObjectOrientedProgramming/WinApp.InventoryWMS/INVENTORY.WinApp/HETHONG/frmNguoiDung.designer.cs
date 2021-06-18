@@ -33,7 +33,6 @@
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenTruyCap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DangNhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ChuThich = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,7 +71,6 @@
             this.Id,
             this.Ten,
             this.TenTruyCap,
-            this.DienThoai,
             this.DangNhap,
             this.ChuThich,
             this.TrangThai});
@@ -122,20 +120,6 @@
             this.TenTruyCap.VisibleIndex = 1;
             this.TenTruyCap.Width = 100;
             // 
-            // DienThoai
-            // 
-            this.DienThoai.AppearanceHeader.Options.UseTextOptions = true;
-            this.DienThoai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DienThoai.Caption = "Điện thoại";
-            this.DienThoai.FieldName = "DienThoai";
-            this.DienThoai.Name = "DienThoai";
-            this.DienThoai.OptionsColumn.FixedWidth = true;
-            this.DienThoai.OptionsFilter.AllowFilter = false;
-            this.DienThoai.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.DienThoai.Visible = true;
-            this.DienThoai.VisibleIndex = 2;
-            this.DienThoai.Width = 80;
-            // 
             // DangNhap
             // 
             this.DangNhap.AppearanceCell.Options.UseTextOptions = true;
@@ -149,7 +133,7 @@
             this.DangNhap.OptionsFilter.AllowFilter = false;
             this.DangNhap.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.DangNhap.Visible = true;
-            this.DangNhap.VisibleIndex = 3;
+            this.DangNhap.VisibleIndex = 2;
             this.DangNhap.Width = 70;
             // 
             // ChuThich
@@ -160,7 +144,7 @@
             this.ChuThich.OptionsFilter.AllowFilter = false;
             this.ChuThich.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.ChuThich.Visible = true;
-            this.ChuThich.VisibleIndex = 4;
+            this.ChuThich.VisibleIndex = 3;
             this.ChuThich.Width = 272;
             // 
             // TrangThai
@@ -175,7 +159,7 @@
             this.TrangThai.OptionsFilter.AllowFilter = false;
             this.TrangThai.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.TrangThai.Visible = true;
-            this.TrangThai.VisibleIndex = 5;
+            this.TrangThai.VisibleIndex = 4;
             this.TrangThai.Width = 80;
             // 
             // gridMain_cboTrangThai
@@ -283,6 +267,5 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.Columns.GridColumn DangNhap;
         private CONTROL.ucKhoHang ucKhoHang;
-        private DevExpress.XtraGrid.Columns.GridColumn DienThoai;
     }
 }

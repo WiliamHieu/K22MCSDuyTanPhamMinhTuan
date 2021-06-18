@@ -29,18 +29,17 @@ namespace INVENTORY.WinApp.CONTROL
             using (var dbContext = new InventoryDbContext())
             {
                 var lstChiNhanh = dbContext.DmChiNhanh.ByTrangThai(1).OrderBy(d => d.ThuTu).ThenBy(d => d.Ten).ToList();
-                TreeListNode nodeTatCa = TreeMain.AppendNode(new object[] { 0, "Tất cả" }, null, CheckState.Checked);
                 foreach (DmChiNhanh entChiNhanh in lstChiNhanh)
                 {
                     nodeChiNhanh = TreeMain.AppendNode(new object[] { 0, entChiNhanh.Id, 0, entChiNhanh.TenVietTat }, null, 0);
                     var lstKhoHang = dbContext.DmKhoHang.ByTrangThai(1).ByIdChiNhanh(entChiNhanh.Id).OrderBy(d => d.ThuTu).ThenBy(d => d.Ten).ToList();
                     foreach (var entKhoHang in lstKhoHang)
                     {
-                        nodeKhoHang = TreeMain.AppendNode(new object[] { 0, entKhoHang.IdChiNhanh, entKhoHang.Id, entKhoHang.Ten }, nodeChiNhanh, 0);
+                        nodeKhoHang = TreeMain.AppendNode(new object[] { entKhoHang.Id, entKhoHang.IdChiNhanh, 0, entKhoHang.Ten }, nodeChiNhanh, 0);
                         var lstVaiTro = dbContext.CustomHtVaiTroGetKhoHang(entKhoHang.Id).ToList();
                         foreach (var entVaiTro in lstVaiTro)
                         {
-                            TreeMain.AppendNode(new object[] { entVaiTro.Id, entKhoHang.IdChiNhanh, entKhoHang.Id, entVaiTro.Ten }, nodeKhoHang, 0);
+                            TreeMain.AppendNode(new object[] { entKhoHang.Id, entKhoHang.IdChiNhanh, entVaiTro.Id, entVaiTro.Ten }, nodeKhoHang, 0);
                         }
                     }
                 }
@@ -58,7 +57,7 @@ namespace INVENTORY.WinApp.CONTROL
         {
             get
             {
-                return Convert.ToInt32(TreeMain.FocusedNode["IdKhoHang"]);
+                return Convert.ToInt32(TreeMain.FocusedNode["Id"]);
             }
         }
 
@@ -74,7 +73,7 @@ namespace INVENTORY.WinApp.CONTROL
         {
             get
             {
-                return Convert.ToInt32(TreeMain.FocusedNode["Id"]);
+                return Convert.ToInt32(TreeMain.FocusedNode["IdVaiTro"]);
             }
         }
 

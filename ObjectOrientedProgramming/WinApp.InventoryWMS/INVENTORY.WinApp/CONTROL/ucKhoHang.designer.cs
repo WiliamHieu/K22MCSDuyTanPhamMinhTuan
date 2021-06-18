@@ -33,7 +33,7 @@
             this.TreeMain = new DevExpress.XtraTreeList.TreeList();
             this.TreeMain_Id = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.TreeMain_IdChiNhanh = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.TreeMain_IdKhoHang = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.TreeMain_IdVaiTro = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.TreeMain_Ten = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.ImageCollection16 = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TreeMain)).BeginInit();
@@ -46,7 +46,7 @@
             this.TreeMain.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.TreeMain_Id,
             this.TreeMain_IdChiNhanh,
-            this.TreeMain_IdKhoHang,
+            this.TreeMain_IdVaiTro,
             this.TreeMain_Ten});
             this.TreeMain.ColumnsImageList = this.ImageCollection16;
             this.TreeMain.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -83,11 +83,11 @@
             this.TreeMain_IdChiNhanh.FieldName = "IdChiNhanh";
             this.TreeMain_IdChiNhanh.Name = "TreeMain_IdChiNhanh";
             // 
-            // TreeMain_IdKhoHang
+            // TreeMain_IdVaiTro
             // 
-            this.TreeMain_IdKhoHang.Caption = "IdKhoHang";
-            this.TreeMain_IdKhoHang.FieldName = "IdKhoHang";
-            this.TreeMain_IdKhoHang.Name = "TreeMain_IdKhoHang";
+            this.TreeMain_IdVaiTro.Caption = "IdVaiTro";
+            this.TreeMain_IdVaiTro.FieldName = "IdVaiTro";
+            this.TreeMain_IdVaiTro.Name = "TreeMain_IdVaiTro";
             // 
             // TreeMain_Ten
             // 
@@ -131,6 +131,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn TreeMain_Ten;
         private DevExpress.Utils.ImageCollection ImageCollection16;
         private DevExpress.XtraTreeList.Columns.TreeListColumn TreeMain_IdChiNhanh;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn TreeMain_IdKhoHang;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn TreeMain_IdVaiTro;
     }
 }
