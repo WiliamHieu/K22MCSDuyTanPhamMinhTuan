@@ -14,6 +14,7 @@ body {
 
 /*#region header */
 .mt-header .navbar {
+    position: relative;
     margin-bottom: 0;
     border: none;
 }
@@ -39,6 +40,30 @@ body {
     display: none;
 }
 
+/*----login----*/
+.mt-login {
+    padding-top: 30px;
+}
+.mt-login .panel-heading {
+    padding: 3px;
+    background-color: #028fcc;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+}
+.mt-login .panel-body {
+    padding: 20px !important;
+}
+.mt-login .checkbox-primary {
+    margin-left: 32px !important;
+}
+.mt-login .account {
+    color: #696969;
+    text-align: center;
+}
+.mt-login .account span {
+    margin-right: 10px;
+}
 /*----footer----*/
 .mt-footer {
     position: absolute;
@@ -60,267 +85,153 @@ body {
 
 /*----Home----*/
 .mt-wrap {
-    padding-top: 56px;
+    padding-top: 16px;
 }
 .mt-wrap .form-control {
     z-index: 0;
 }
-.mt-wrap .panel-heading {
-    padding: 8px;
-    background-color: none;
-    font-size: 13px;
-    font-weight: bold;
-}
-.mt-wrap .panel-title {
-    font-size: 13px;
-    font-weight: bold;
-}
-.mt-wrap .panel-body {
-    padding: 10px 0;
-}
-.mt-wrap .form-item-desc {
-    padding-top: 3px;
-    text-align: justify;
-}
-.mt-wrap .about-text {
-    text-align: justify;
-}
-.mt-wrap .author {
-    margin: 10px 0;
-    font-weight: bold;
-}
 
-.mt-toolbar {
-    display: block;
+.mt-detail {
     width: 100%;
     position: relative;
-    z-index: 1000;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
-.mt-toolbar .left {
-    display: inline-block;
+.mt-detail .title {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 10px 0;
 }
-.mt-toolbar .pull-left {
-    color: #028FCC;
+.mt-detail .image {
+    width: 100%;
+}
+.mt-detail .description {
+    overflow: hidden;
+    display: block;
+    width: 98%;
+    text-align: justify;
+    color: #393939;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+.mt-detail .price {
+    overflow: hidden;
+    display: block;
+    width: 98%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #DD1A22;
+    margin-bottom: 15px;
+}
+.mt-detail .accessories {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    border: solid 1px #eaeaea;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.mt-detail .accessories ul {
+    display: block;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+}
+.mt-detail .accessories ul li {
+    display: block;
+    padding-left: 23px;
+    padding-top: 1px;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 25px;
+}
+.mt-detail .accessories ul .fa-cube {
+    position: relative;
+}
+.mt-detail .accessories ul .fa-cube:before {
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    padding-right: 7px;
+    content: "\f1b2";
+}
+.mt-detail .accessories ul .fa-clock {
+    position: relative;
+}
+.mt-detail .accessories ul .fa-clock:before {
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    padding-right: 7px;
+    content: "\f017";
+}
+.mt-detail .accessories ul .fa-undo {
+    position: relative;
+}
+.mt-detail .accessories ul .fa-undo:before {
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    padding-right: 7px;
+    content: "\f0e2";
+}
+.mt-detail .button {
+    display: block;
+    overflow: hidden
+}
+.mt-detail .button a {
+    text-decoration: none;
+}
+.mt-detail .button .buy-now {
+    float: left;
+    width: 49.5%;
+    overflow: hidden;
+    padding: 5px 0;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #fd6e1d;
+    border-radius: 4px;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#fd6e1d),to(#f59000));
+    background: -webkit-linear-gradient(top,#f59000,#fd6e1d);
+    background: -moz-linear-gradient(top,#f59000,#fd6e1d);
+    background: -ms-linear-gradient(top,#f59000,#fd6e1d);
+    background: -o-linear-gradient(top,#f59000,#fd6e1d);
+    margin-right: 1%
 }
-.mt-toolbar .right {
-    display:inline-block;
+.mt-detail .button span {
+    display: block;
+    font-size: 12px;
+    color: #fff;
+    text-transform: none;
+    font-weight: normal
+}
+.mt-detail .button .buy-ins {
+    line-height: normal;
     float: right;
-    text-align:right;
-    width: 80px;
-}
-.mt-toolbar .breadcrumb {
-    display: inline-block;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-}
-.mt-toolbar .breadcrumb > li + li:before {
-    padding: 0 0 0 3px;
-}
-.mt-toolbar .btn-link {
-    padding: 0;
-    margin: 0;
-}
-.mt-toolbar .fa {
-    margin-right: 3px;
+    width: 49.5%;
+    padding: 5px 0;
+    border-radius: 4px;
+    text-align: center;
+    background: #288ad6;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-
-table.gridview {
-    width:100%;
-    border-collapse: collapse;
-    border: 1px solid #ccc; 
-    color: #333;
-}
-table.gridview th {
-    text-align: left;
-    line-height: 2.1em;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-table.gridview .alternate {
-    background-color: #f9f9f9
-}
-table.gridview tbody tr:hover {
-    background-color: #e7f1f3;
-    cursor:pointer;
-}
-table.gridview td {
-    text-align:left;
-    border: solid 1px #ccc;
-    white-space:pre-wrap; 
-    word-wrap:break-word;
-    padding: 5px;
-}
-table.gridview td strong {
-    white-space:pre-wrap; 
-    word-wrap:break-word;
-    font-weight:normal;
-    width:100%;
-}
-table.gridview .order {
-    width:35px;
-    text-align: center;
-}
-table.gridview .count {
-    width:45px;
-    text-align: center;
-}
-table.gridview .type {
-    width:60px;
-    text-align: center;
-}
-table.gridview .tdate {
-    width:70px;
-    text-align: center;
-}
-table.gridview .cdate {
-    text-align: right;
-}
-table.gridview .tnumber {
-    width:30px;
-    text-align: center;
-}
-table.gridview .cnumber {
-    text-align: right;
-}
-table.gridview .tprice {
-    width:70px;
-    text-align: center;
-}
-table.gridview .cprice {
-    text-align: right;
-}
-table.gridview .btn-1 {
-    width:30px;
-    text-align:center;
-}
-table.gridview .btn-2 {
-    width:57px;
-    text-align:center;
-}
-table.gridview .w100 {
-    width:100px;
-}
-table.gridview .w80 {
-    width:80px;
-}
-table.gridview .w60 {
-    width:60px;
-}
-table.gridview tr {
-    cursor:pointer;
-}
-table.gridview td .note {
-    font-size:11px;
-    color:#727272;
-}
-table.gridview .data-input {
-    padding: 0px;
-}
-table.gridview .data-input .form-control {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-table.gridview .data-input .input-sm {
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    text-align: right;
-    border: none;
-    padding: 3px;
-    border-radius: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    background-color: transparent;
-}
-table.gridview .data-input .btn-default {
-    border-radius: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    background-color: transparent;
-}
-
-
-.mt-table {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-}
-.mt-table .mt-table-caption {
-    display: table-caption;
-    border: 1px solid #ccc;
-    border-bottom: none;
-} 
-.mt-table .mt-body {
-    display: table-row-group;
-}
-.mt-table .mt-row {
-    display: table-row;
-}
-.mt-table .mt-cell {
-    display: table-cell;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-.mt-table .w-70 {
-    width: 70px;
-    text-align: right;
-}
-.mt-table .w-75 {
-    width: 75px;
-    text-align: right;
-}
-.mt-table .w-80 {
-    width: 80px;
-    text-align: right;
-}
-.mt-table .w-85 {
-    width: 85px;
-    text-align: right;
-}
-.mt-table .w-90 {
-    width: 90px;
-    text-align: right;
-}
-.mt-table .order {
-    width: 35px;
-    text-align: center;
-}
-.mt-table .tnumber {
-    width:30px;
-    text-align: center;
-}
-.mt-table .cnumber {
-    text-align: right;
-}
-.mt-table .tprice {
-    width:70px;
-    text-align: center;
-}
-.mt-table .cprice {
-    text-align: right;
-}
-.mt-table .header {
-    font-weight: bold;
-    background-color: #eee;
-}
-.mt-table .footer {
-    font-weight: bold;
-    background-color: #eee;
-}
-.mt-table .alternate {
-    background-color: #fafafa
-}
-.mt-table .note {
-    font-size: 11px;
-    color: #727272;
-}
 
 @media (max-width: 394px) {
     .navbar-default .navbar-nav > li:first-child {

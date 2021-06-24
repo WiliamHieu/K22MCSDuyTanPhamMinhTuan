@@ -17,3 +17,4 @@ D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.Inve
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Release\INVENTORY.Data.csproj.CopyComplete
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Release\INVENTORY.Data.dll
 D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Release\INVENTORY.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ObjectOrientedProgramming\WinApp.InventoryWMS\INVENTORY.Data\obj\Release\INVENTORY.Data.csprojAssemblyReference.cache

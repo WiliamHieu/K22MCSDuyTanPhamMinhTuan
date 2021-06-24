@@ -4,14 +4,18 @@ using System.Web;
 
 public class Common
 {
-    public static string Web_AppSetting(string sKeyApp)
+    public static string Web_AppSetting(string appSettingKey)
     {
-        return ConfigurationManager.AppSettings[sKeyApp];
+        return ConfigurationManager.AppSettings[appSettingKey];
     }
 
-    public static DateTime DateTime_GetServer()
+    public static string Web_UserInfo(string userInfoKey)
     {
-        return DateTime.Now.ToUniversalTime().AddHours(7);
+        if (HttpContext.Current.User.Identity.Name.Trim().Length == 0) return string.Empty;
+        string[] UserInfo = HttpContext.Current.User.Identity.Name.Split(';');
+        if (userInfoKey.Equals("Username")) return UserInfo.GetValue(0).ToString();
+        if (userInfoKey.Equals("Name")) return UserInfo.GetValue(1).ToString();
+        return string.Empty;
     }
 
     public static void Cookies_Save(string cookiesName, string cookiesValue)

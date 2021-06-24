@@ -12,10 +12,29 @@ public partial class Main : System.Web.UI.MasterPage
         {
             form1.Action = Request.RawUrl;
 
-            StringBuilder sbMenu = new StringBuilder();
-            sbMenu.Append("<li><a href=\"/\">Trang chủ</a></li>");
-            sbMenu.Append("<li><a href=\"/about\">Giới thiệu</a></li>");
-            lblMainMenu.Text = sbMenu.ToString();
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                string fullName = Common.Web_UserInfo("Name");
+
+                StringBuilder sbDesktopUser = new StringBuilder();
+                sbDesktopUser.Append("<div class=\"user-info\">");
+                sbDesktopUser.Append("<ul class=\"list-unstyled\">");
+                sbDesktopUser.AppendFormat("<li><a class=\"user-info-link\" href=\"javascript:void(0)\"><i class=\"fa fa-user-circle-o fa-fw\"></i> {0}</a></li>", fullName);
+                sbDesktopUser.Append("<li><a class=\"user-info-link\" href=\"/SignOut.aspx\"><i class=\"fa fa-sign-out fa-fw\"></i> Đăng xuất</a></li>");
+                sbDesktopUser.Append("</ul>");
+                sbDesktopUser.Append("</div>");
+                lblUserDesktop.Text = sbDesktopUser.ToString();
+
+                StringBuilder sbUserMobile = new StringBuilder();
+                sbUserMobile.Append("<div class=\"user-info-mobile\">");
+                sbUserMobile.Append("<ul class=\"list-inline\">");
+                sbUserMobile.AppendFormat("<li><a class=\"user-info-link\" href=\"javascript:void(0)\"><i class=\"fa fa-user-circle-o fa-fw\"></i> {0}</a></li>", fullName);
+                sbUserMobile.Append("<li><a class=\"user-info-link\" href=\"/SignOut.aspx\"><i class=\"fa fa-sign-out fa-fw\"></i> Đăng xuất</a></li>");
+                sbUserMobile.Append("</ul>");
+                sbUserMobile.Append("</div>");
+
+                lblUserMobile.Text = sbUserMobile.ToString();
+            }
         }
     }
 

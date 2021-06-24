@@ -35,13 +35,14 @@
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">
-                        <img src="/images/logo.png"/>
-                    </a>
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png"/></a>
+                    <asp:Literal ID="lblUserDesktop" runat="server"/>
                 </div>
                 <div id="mainNav" class="collapse navbar-collapse">
+                    <asp:Literal ID="lblUserMobile" runat="server"/>
                     <ul class="nav navbar-nav navbar-right">
-                        <asp:Literal ID="lblMainMenu" runat="server"/>
+                        <li><a href="/Default.aspx">Lỗ hổng Đăng nhập</a></li>
+                        <li><a href="/QueryString.aspx?Id=1">Lỗ hổng QueryString</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 copyright">
-                    Nhóm tác giả lớp K22MCS - Đại học Duy Tân &#169; 2021
+                    Nhóm học viên K22MCS - Đại học Duy Tân &#169; 2021
                 </div>
             </div>
         </div>

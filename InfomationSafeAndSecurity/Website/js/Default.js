@@ -1,118 +1,74 @@
-﻿var pageIndex = 1;
-$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
+﻿$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
 $(document).ready(function () {
-    $(".btn-primary").on("click", function () {
-        Search();
+    $("#cmdLogin").click(function () {
+        DoLogin();
     });
-    $(".btn-default").on("click", function () {
-        Clear();
+    $('#txtUsername').on('input change keyup copy paste cut', function (e) {
+        BuidSQLQuery();
+    });
+    $('#txtPassword').on('input change keyup copy paste cut', function (e) {
+        BuidSQLQuery();
+    });
+    $('#chkValidate').on('input change', function (e) {
+        BuidSQLQuery();
     });
 });
 
-function Search() {
-    result_hide();
-
-    var txtName = $('#txtName'); var cboGender = $('#cboGender'); var cboAge = $('#cboAge'); 
-
-    txtName.on('change keyup paste', function () { txtName.parent().removeClass("has-error"); });
-    cboGender.on('change keyup paste', function () { cboGender.parent().removeClass("has-error"); });
-    cboAge.on('change keyup paste', function () { cboAge.parent().removeClass("has-error"); });
-
-    var checkData = true;
-    if (getString(txtName).length == 0) {
-        txtName.parent().addClass("has-error");
-        checkData = false;
+function BuidSQLQuery() {
+    var Username = getString($('#txtUsername'));
+    var Password = getString($('#txtPassword'));
+    var Validate = $('#chkValidate').prop('checked');
+    if (Validate) {
+        Username = Username.replace(/[^a-z0-9\s]/gi, '');
+        Password = Password.replace(/[^a-z0-9\s]/gi, '');
     }
-    if (getString(cboAge).length == 0) {
-        cboAge.parent().addClass("has-error");
-        checkData = false;
-    }
-    if (getString(cboGender).length == 0 || getString(cboGender) == -1) {
-        cboGender.parent().addClass("has-error");
-        checkData = false;
-    }
+    var sqlQuery = "SELECT Username, Password, Name, Status FROM Users WHERE Username='" + Username + "' AND Password='" + Password + "'";
+    $('#txtSQLQuery').val(sqlQuery);
+}
 
-    if (checkData == false) return;
+function DoLogin() {
+    alert_hide();
 
-    var Name = getString(txtName);
-    var Age = getString(cboAge);
-    var Gender = getString(cboGender);
-    var Polyuria = $("input[name='Polyuria']:checked").val();
-    var Polydipsia = $("input[name='Polydipsia']:checked").val();
-    var SuddenWeightLoss = $("input[name='SuddenWeightLoss']:checked").val();
-    var Weakness = $("input[name='Weakness']:checked").val();
-    var Polyphagia = $("input[name='Polyphagia']:checked").val();
-    var GenitalThrush = $("input[name='GenitalThrush']:checked").val();
-    var VisualBlurring = $("input[name='VisualBlurring']:checked").val();
-    var Itching = $("input[name='Itching']:checked").val();
-    var Irritability = $("input[name='Irritability']:checked").val();
-    var DelayedHealing = $("input[name='DelayedHealing']:checked").val();
-    var PartialParesis = $("input[name='PartialParesis']:checked").val();
-    var MuscleStiffness = $("input[name='MuscleStiffness']:checked").val();
-    var Alopecia = $("input[name='Alopecia']:checked").val();
-    var Obesity = $("input[name='Obesity']:checked").val();
+    var txtUsername = $('#txtUsername'); var txtPassword = $('#txtPassword');
+    txtUsername.on('change keyup paste', function () { txtUsername.parent().removeClass("has-error"); });
+    txtPassword.on('change keyup paste', function () { txtPassword.parent().removeClass("has-error"); });
+
+    var Username = getString(txtUsername);
+    var Password = getString(txtPassword);
+    var Remember = $('#chkRemember').prop('checked');
+
+    var validData = true;
+    if (Username.length === 0) {
+        txtUsername.parent().addClass("has-error");
+        validData = false;
+    }
+    if (Password.length === 0) {
+        txtPassword.parent().addClass("has-error");
+        validData = false;
+    }
+    if (!validData) return;
+
+    var Validate = $('#chkValidate').prop('checked');
+    if (Validate) {
+        Username = Username.replace(/[^a-z0-9\s]/gi, '');
+        Password = Password.replace(/[^a-z0-9\s]/gi, '');
+    }
 
     $.ajax({
         type: "POST",
-        url: "/Default.aspx/Search",
-        data: JSON.stringify({ Name: Name, Age: Age, Gender: Gender, Polyuria: Polyuria, Polydipsia: Polydipsia, SuddenWeightLoss: SuddenWeightLoss, Weakness: Weakness, Polyphagia: Polyphagia, GenitalThrush: GenitalThrush, VisualBlurring: VisualBlurring, Itching: Itching, Irritability: Irritability, DelayedHealing: DelayedHealing, PartialParesis: PartialParesis, MuscleStiffness: MuscleStiffness, Alopecia: Alopecia, Obesity: Obesity }),
+        url: "/Default.aspx/DoLogin",
+        data: JSON.stringify({ Username: Username, Password: Password, Remember: Remember }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
-            if (response.d.substring(0, 3) === 'Loi') {
-                result_show(response.d.substring(3));
+            if (response.d.length > 0) {
+                alert_show(response.d);
             }
             else {
-                result_show(response.d);
+                $(location).attr("href", '/QueryString.aspx?Id=1');
             }
-            $(window).scrollTop(0);
         },
         error: ajax_error
     });
-}
-
-function Clear() {
-    result_hide();
-
-    var txtName = $('#txtName'); var cboAge = $('#cboAge'); var cboGender = $('#cboGender');
-
-    txtName.parent().removeClass("has-error");
-    cboAge.parent().removeClass("has-error");
-    cboGender.parent().removeClass("has-error");
-
-    txtName.val('');
-    cboAge.val('');
-    cboGender.val(-1);
-
-    $("input[name='Polyuria'][value='0']").prop("checked", true);
-    $("input[name='Polydipsia'][value='0']").prop("checked", true);
-    $("input[name='SuddenWeightLoss'][value='0']").prop("checked", true);
-    $("input[name='Weakness'][value='0']").prop("checked", true);
-    $("input[name='Polyphagia'][value='0']").prop("checked", true);
-    $("input[name='GenitalThrush'][value='0']").prop("checked", true);
-    $("input[name='VisualBlurring'][value='0']").prop("checked", true);
-    $("input[name='Itching'][value='0']").prop("checked", true);
-    $("input[name='Irritability'][value='0']").prop("checked", true);
-    $("input[name='DelayedHealing'][value='0']").prop("checked", true);
-    $("input[name='PartialParesis'][value='0']").prop("checked", true);
-    $("input[name='MuscleStiffness'][value='0']").prop("checked", true);
-    $("input[name='Alopecia'][value='0']").prop("checked", true);
-    $("input[name='Obesity'][value='0']").prop("checked", true);
-
-    $(window).scrollTop(0);
-}
-
-function result_hide() {
-    if ($('.result').hasClass('show')) {
-        $('.result').removeClass("show");
-        $('.result').addClass("hide");
-        $('.result').html('');
-    }
-}
-function result_show(value) {
-    if ($('.result').hasClass('hide')) {
-        $('.result').removeClass("hide");
-        $('.result').addClass("show");
-        $('.result').html(value);
-    }
+    return false;
 }
