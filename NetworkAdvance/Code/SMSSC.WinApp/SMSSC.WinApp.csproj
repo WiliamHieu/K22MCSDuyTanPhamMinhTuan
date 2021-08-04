@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E11DF1C-72F1-401E-8FAE-F1145954CDA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SMSSC.WinApp</RootNamespace>
+    <AssemblyName>SMSSC.WinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SMSSC.WinApp.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>..\..\..\..\..\CodeTemplate\DLL\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="MTLibrary">
+      <HintPath>..\..\..\..\MTLibrary\MTLibrary\bin\Release\MTLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COMMON\AppSetting.cs" />
+    <Compile Include="COMMON\oXtraGrid.cs" />
+    <Compile Include="CONTROL\Toolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\Toolbar.designer.cs">
+      <DependentUpon>Toolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\Toolbar01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\Toolbar01.designer.cs">
+      <DependentUpon>Toolbar01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarDm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarDm.designer.cs">
+      <DependentUpon>ToolbarDm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarLd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarLd.designer.cs">
+      <DependentUpon>ToolbarLd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\ToolbarNhap.designer.cs">
+      <DependentUpon>ToolbarNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageImport.designer.cs">
+      <DependentUpon>frmMessageImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageTemplate.designer.cs">
+      <DependentUpon>frmMessageTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageTemplateAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageTemplateAdd.designer.cs">
+      <DependentUpon>frmMessageTemplateAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageHistory.designer.cs">
+      <DependentUpon>frmMessageHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageAdd.designer.cs">
+      <DependentUpon>frmMessageAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TutorialFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="CONTROL\Toolbar.resx">
+      <DependentUpon>Toolbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\Toolbar01.resx">
+      <DependentUpon>Toolbar01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\ToolbarDm.resx">
+      <DependentUpon>ToolbarDm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\ToolbarLd.resx">
+      <DependentUpon>ToolbarLd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\ToolbarNhap.resx">
+      <DependentUpon>ToolbarNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageImport.resx">
+      <DependentUpon>frmMessageImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageTemplate.resx">
+      <DependentUpon>frmMessageTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageTemplateAdd.resx">
+      <DependentUpon>frmMessageTemplateAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageHistory.resx">
+      <DependentUpon>frmMessageHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageAdd.resx">
+      <DependentUpon>frmMessageAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TutorialFormBase.resx">
+      <DependentUpon>TutorialFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+    <None Include="Resources\Message.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMSSC.Data.SqlClient\SMSSC.Data.SqlClient.csproj">
+      <Project>{8996a7b4-57d3-440b-a545-a701844b8c4a}</Project>
+      <Name>SMSSC.Data.SqlClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSSC.Data\SMSSC.Data.csproj">
+      <Project>{041c1bbe-0bfb-4d45-8125-9ab0bbc09a92}</Project>
+      <Name>SMSSC.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMSSC.Entities\SMSSC.Entities.csproj">
+      <Project>{20e43088-4618-4f4a-b8ad-fc31b50d94cd}</Project>
+      <Name>SMSSC.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

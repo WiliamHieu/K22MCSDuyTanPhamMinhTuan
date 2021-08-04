@@ -1,0 +1,15 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\SMSSC.Entities.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\SMSSC.Entities.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\SMSSC.Entities.xml
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\obj\Debug\SMSSC.Entities.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\obj\Debug\SMSSC.Entities.csproj.CopyComplete
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\obj\Debug\SMSSC.Entities.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\obj\Debug\SMSSC.Entities.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\SMSSC.Entities\obj\Debug\SMSSC.Entities.csproj.AssemblyReference.cache

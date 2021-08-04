@@ -1,0 +1,648 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSSC.Data.SqlClient</name>
+    </assembly>
+    <members>
+        <member name="T:SMSSC.Data.SqlClient.SqlMessageTemplateProvider">
+            <summary>
+             This class is the SqlClient Data Access Logic Component implementation for the <see cref="T:SMSSC.Entities.MessageTemplate"/> entity.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProvider.#ctor(System.String,System.Boolean,System.String)">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageTemplateProvider"/> instance.
+            Uses connection string to connect to datasource.
+            </summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <param name="useStoredProcedure">A boolean value that indicates if we use the stored procedures or embedded queries.</param>
+            <param name="providerInvariantName">Name of the invariant provider use by the DbProviderFactory.</param>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase">
+            <summary>
+             This class is the SqlClient Data Access Logic Component implementation for the <see cref="T:SMSSC.Entities.MessageTemplate"/> entity.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.#ctor">
+            <summary>Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase"/> instance.</summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.#ctor(System.String,System.Boolean,System.String)">
+            <summary>Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase"/> instance. Uses connection string to connect to datasource.</summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <param name="useStoredProcedure">A boolean value that indicates if we should use stored procedures or embedded queries.</param>
+            <param name="providerInvariantName">Name of the invariant provider use by the DbProviderFactory.</param>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.ConnectionString">
+            <summary>Gets or sets the connection string.</summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.UseStoredProcedure">
+            <summary>Gets or sets a value indicating whether to use stored procedures.</summary>
+            <value><c>true</c> if we choose to use use stored procedures; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.ProviderInvariantName">
+            <summary>Gets or sets the invariant provider name listed in the DbProviderFactories machine.config section.</summary>
+            <value>The name of the provider invariant.</value>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.GetTotalItems(SMSSC.Data.TransactionManager,System.String)">
+            <summary>Gets number of rows from the DataSource.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="whereClause">Specifies the condition for the rows returned by a query (Name='John Doe', Name='John Doe' AND Id='1', Name='John Doe' OR Id='1').</param>
+            <remarks></remarks>
+            <returns>Returns a number of rows from the DataSource.</returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.GetPaged(SMSSC.Data.TransactionManager,System.String,System.String)">
+            <summary>Gets a page of rows from the DataSource.</summary>
+            <param name="whereClause">Specifies the condition for the rows returned by a query (Name='John Doe', Name='John Doe' AND Id='1', Name='John Doe' OR Id='1').</param>
+            <param name="orderBy">Specifies the sort criteria for the rows in the DataSource (Name ASC; BirthDay DESC, Name ASC);</param>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <remarks></remarks>
+            <returns>Returns a typed collection of SMSSC.Entities.MessageTemplate objects.</returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.GetById(SMSSC.Data.TransactionManager,System.Int32)">
+            <summary>Gets rows from the datasource based on the PK_MessageTemplate index.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="_id"></param>
+            <returns>Returns an instance of the <see cref="T:SMSSC.Entities.MessageTemplate"/> class.</returns>
+            <remarks></remarks>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.BulkInsert(SMSSC.Data.TransactionManager,SMSSC.Entities.TList{SMSSC.Entities.MessageTemplate})">
+            <summary>Lets you efficiently bulk insert many entities to the database.</summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="entities">The entities.</param>
+            <remarks>After inserting into the datasource, the SMSSC.Entities.MessageTemplate object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>	
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.Insert(SMSSC.Data.TransactionManager,SMSSC.Entities.MessageTemplate)">
+            <summary>Inserts a SMSSC.Entities.MessageTemplate object into the datasource using a transaction.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="entity">SMSSC.Entities.MessageTemplate object to insert.</param>
+            <remarks>After inserting into the datasource, the SMSSC.Entities.MessageTemplate object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>	
+            <returns>Returns true if operation is successful.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.Update(SMSSC.Data.TransactionManager,SMSSC.Entities.MessageTemplate)">
+            <summary>Update an existing row in the datasource.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="entity">SMSSC.Entities.MessageTemplate object to update.</param>
+            <remarks>After updating the datasource, the SMSSC.Entities.MessageTemplate object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>
+            <returns>Returns true if operation is successful.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageTemplateProviderBase.Delete(SMSSC.Data.TransactionManager,System.Int32)">
+            <summary>Deletes a row from the DataSource.</summary>
+            <param name="_id">. Primary Key.</param>	
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <remarks>Deletes based on primary key(s).</remarks>
+            <returns>Returns true if operation suceeded.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.SqlMessageHistoryProvider">
+            <summary>
+             This class is the SqlClient Data Access Logic Component implementation for the <see cref="T:SMSSC.Entities.MessageHistory"/> entity.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProvider.#ctor(System.String,System.Boolean,System.String)">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageHistoryProvider"/> instance.
+            Uses connection string to connect to datasource.
+            </summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <param name="useStoredProcedure">A boolean value that indicates if we use the stored procedures or embedded queries.</param>
+            <param name="providerInvariantName">Name of the invariant provider use by the DbProviderFactory.</param>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase">
+            <summary>
+             This class is the SqlClient Data Access Logic Component implementation for the <see cref="T:SMSSC.Entities.MessageHistory"/> entity.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.#ctor">
+            <summary>Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase"/> instance.</summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.#ctor(System.String,System.Boolean,System.String)">
+            <summary>Creates a new <see cref="T:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase"/> instance. Uses connection string to connect to datasource.</summary>
+            <param name="connectionString">The connection string to the database.</param>
+            <param name="useStoredProcedure">A boolean value that indicates if we should use stored procedures or embedded queries.</param>
+            <param name="providerInvariantName">Name of the invariant provider use by the DbProviderFactory.</param>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.ConnectionString">
+            <summary>Gets or sets the connection string.</summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.UseStoredProcedure">
+            <summary>Gets or sets a value indicating whether to use stored procedures.</summary>
+            <value><c>true</c> if we choose to use use stored procedures; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.ProviderInvariantName">
+            <summary>Gets or sets the invariant provider name listed in the DbProviderFactories machine.config section.</summary>
+            <value>The name of the provider invariant.</value>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.GetTotalItems(SMSSC.Data.TransactionManager,System.String)">
+            <summary>Gets number of rows from the DataSource.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="whereClause">Specifies the condition for the rows returned by a query (Name='John Doe', Name='John Doe' AND Id='1', Name='John Doe' OR Id='1').</param>
+            <remarks></remarks>
+            <returns>Returns a number of rows from the DataSource.</returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.GetPaged(SMSSC.Data.TransactionManager,System.String,System.String)">
+            <summary>Gets a page of rows from the DataSource.</summary>
+            <param name="whereClause">Specifies the condition for the rows returned by a query (Name='John Doe', Name='John Doe' AND Id='1', Name='John Doe' OR Id='1').</param>
+            <param name="orderBy">Specifies the sort criteria for the rows in the DataSource (Name ASC; BirthDay DESC, Name ASC);</param>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <remarks></remarks>
+            <returns>Returns a typed collection of SMSSC.Entities.MessageHistory objects.</returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.GetById(SMSSC.Data.TransactionManager,System.Guid)">
+            <summary>Gets rows from the datasource based on the PK_MessageHistory_1 index.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="_id"></param>
+            <returns>Returns an instance of the <see cref="T:SMSSC.Entities.MessageHistory"/> class.</returns>
+            <remarks></remarks>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.BulkInsert(SMSSC.Data.TransactionManager,SMSSC.Entities.TList{SMSSC.Entities.MessageHistory})">
+            <summary>Lets you efficiently bulk insert many entities to the database.</summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="entities">The entities.</param>
+            <remarks>After inserting into the datasource, the SMSSC.Entities.MessageHistory object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>	
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.Insert(SMSSC.Data.TransactionManager,SMSSC.Entities.MessageHistory)">
+            <summary>Inserts a SMSSC.Entities.MessageHistory object into the datasource using a transaction.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="entity">SMSSC.Entities.MessageHistory object to insert.</param>
+            <remarks>After inserting into the datasource, the SMSSC.Entities.MessageHistory object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>	
+            <returns>Returns true if operation is successful.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.Update(SMSSC.Data.TransactionManager,SMSSC.Entities.MessageHistory)">
+            <summary>Update an existing row in the datasource.</summary>
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <param name="entity">SMSSC.Entities.MessageHistory object to update.</param>
+            <remarks>After updating the datasource, the SMSSC.Entities.MessageHistory object will be updated to refelect any changes made by the datasource. (ie: identity or computed columns)</remarks>
+            <returns>Returns true if operation is successful.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlMessageHistoryProviderBase.Delete(SMSSC.Data.TransactionManager,System.Guid)">
+            <summary>Deletes a row from the DataSource.</summary>
+            <param name="_id">. Primary Key.</param>	
+            <param name="transactionManager"><see cref="T:SMSSC.Data.TransactionManager"/> object</param>
+            <remarks>Deletes based on primary key(s).</remarks>
+            <returns>Returns true if operation suceeded.</returns>
+            <exception cref="T:System.Exception">The command could not be executed.</exception>
+            <exception cref="T:System.Data.DataException">The <paramref name="transactionManager"/> is not open.</exception>
+            <exception cref="T:System.Data.Common.DbException">The command could not be executed.</exception>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.SqlNetTiersProvider">
+            <summary>
+            This class is the Sql implementation of the NetTiersProvider.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:SMSSC.Data.SqlClient.SqlNetTiersProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="name">The friendly name of the provider.</param>
+            <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+            <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+            <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)"></see> on a provider after the provider has already been initialized.</exception>
+            <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.CreateTransaction">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.TransactionManager"/> instance from the current datasource.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.UseStoredProcedure">
+            <summary>
+            Gets a value indicating whether to use stored procedure or not.
+            </summary>
+            <value>
+            	<c>true</c> if this repository use stored procedures; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.ProviderInvariantName">
+            <summary>
+            Gets or sets the invariant provider name listed in the DbProviderFactories machine.config section.
+            </summary>
+            <value>The name of the provider invariant.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.IsTransactionSupported">
+            <summary>
+             Indicates if the current <see cref="T:SMSSC.Data.Bases.NetTiersProvider"/> implementation supports Transacton.
+            </summary>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.MessageTemplateProvider">
+            <summary>
+             This class is the Data Access Logic Component for the <see cref="T:SMSSC.Entities.MessageTemplate"/> business entity.
+             It exposes CRUD methods as well as selecting on index, foreign keys and custom stored procedures.
+            </summary>
+             <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.SqlMessageTemplateProvider">
+            <summary>
+            Gets the current <see cref="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.SqlMessageTemplateProvider"/>.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.MessageHistoryProvider">
+            <summary>
+             This class is the Data Access Logic Component for the <see cref="T:SMSSC.Entities.MessageHistory"/> business entity.
+             It exposes CRUD methods as well as selecting on index, foreign keys and custom stored procedures.
+            </summary>
+             <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.SqlMessageHistoryProvider">
+            <summary>
+            Gets the current <see cref="P:SMSSC.Data.SqlClient.SqlNetTiersProvider.SqlMessageHistoryProvider"/>.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(System.String,System.Object[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(SMSSC.Data.TransactionManager,System.String,System.Object[])">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="commandWrapper">The command wrapper.</param>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(SMSSC.Data.TransactionManager,System.Data.Common.DbCommand)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandWrapper">The command wrapper.</param>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(System.Data.CommandType,System.String)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteNonQuery(SMSSC.Data.TransactionManager,System.Data.CommandType,System.String)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(System.String,System.Object[])">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(SMSSC.Data.TransactionManager,System.String,System.Object[])">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(System.Data.Common.DbCommand)">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(SMSSC.Data.TransactionManager,System.Data.Common.DbCommand)">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(System.Data.CommandType,System.String)">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteReader(SMSSC.Data.TransactionManager,System.Data.CommandType,System.String)">
+            <summary>
+            Executes the reader.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(System.String,System.Object[])">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(SMSSC.Data.TransactionManager,System.String,System.Object[])">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(System.Data.Common.DbCommand)">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(SMSSC.Data.TransactionManager,System.Data.Common.DbCommand)">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(System.Data.CommandType,System.String)">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteDataSet(SMSSC.Data.TransactionManager,System.Data.CommandType,System.String)">
+            <summary>
+            Executes the data set.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(System.String,System.Object[])">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(SMSSC.Data.TransactionManager,System.String,System.Object[])">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="storedProcedureName">Name of the stored procedure.</param>
+            <param name="parameterValues">The parameter values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(SMSSC.Data.TransactionManager,System.Data.Common.DbCommand)">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandWrapper">The command wrapper.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(System.Data.CommandType,System.String)">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.SqlNetTiersProvider.ExecuteScalar(SMSSC.Data.TransactionManager,System.Data.CommandType,System.String)">
+            <summary>
+            Executes the scalar.
+            </summary>
+            <param name="transactionManager">The transaction manager.</param>
+            <param name="commandType">Type of the command.</param>
+            <param name="commandText">The command text.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.StoredProcedureProvider">
+            <summary>
+            Summary description for Procedures.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.#ctor">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.SqlClient.StoredProcedureProvider"/> instance.
+            </summary>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.StoredProcedureProvider.Current">
+            <summary>
+            Gets the current <see cref="T:SMSSC.Data.SqlClient.StoredProcedureProvider"/> singleton instance.
+            </summary>
+            <value><see cref="T:SMSSC.Data.SqlClient.StoredProcedureProvider"/></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.StoredProcedureProvider.Procedures">
+            <summary>
+            Gets or sets the procedures.
+            </summary>
+            <value>An <see cref="T:System.Collections.ArrayList"/> of <see cref="T:SMSSC.Data.SqlClient.Procedure"/> objects.</value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.StoredProcedureProvider.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:SMSSC.Data.SqlClient.Procedure"/> instance with the specified name.
+            </summary>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.StoredProcedureProvider.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:SMSSC.Data.SqlClient.Procedure"/> instance at the specified index.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.Serialize(System.String)">
+            <summary>
+            Serializes the specified filename.
+            </summary>
+            <param name="filename">Filename.</param>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.Deserialize">
+            <summary>
+            Deserializes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.GetProcedureBodyFromEmbeddedResource(System.String)">
+            <summary>
+            Get the query text from the embedded xml file.
+            </summary>
+            <param name="name">The name of the query.</param>
+            <returns>the text of the query</returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.GetCommandWrapper(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.String,System.Boolean)">
+            <summary>
+            Get the command wrapper, either from the stored procedures or from the embedded queries.
+            </summary>
+            <param name="database">The database instance.</param>
+            <param name="commandName">the name of the sp.</param>
+            <param name="useStoredProcedure">Indicates if we want stored procedure.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.StoredProcedureProvider.GetCommandWrapper(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.String,System.Type,SMSSC.Data.SqlFilterParameterCollection,System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets the command wrapper for a dynamically generated query and
+            optionally includes server-side paging.
+            </summary>
+            <param name="database"></param>
+            <param name="commandName"></param>
+            <param name="columnEnum"></param>
+            <param name="parameters"></param>
+            <param name="orderBy"></param>
+            <param name="start"></param>
+            <param name="pageLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.Procedure">
+            <summary>
+            Represents a sql query.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.Procedure.#ctor">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.SqlClient.Procedure"/> instance.
+            </summary>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Procedure.Parameters">
+            <summary>
+            Gets or sets the parameters.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Procedure.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Procedure.Owner">
+            <summary>
+            Gets or sets the owner.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Procedure.Comment">
+            <summary>
+            Gets or sets the comment.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Procedure.Body">
+            <summary>
+            Gets or sets the body.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.Procedure.Parameter(System.String)">
+            <summary>
+            Get the parameter from the specified name of the param.
+            </summary>
+            <param name="paramName">Name of the param.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SMSSC.Data.SqlClient.Parameter">
+            <summary>
+            Respresents a query parameter.
+            </summary>
+        </member>
+        <member name="M:SMSSC.Data.SqlClient.Parameter.#ctor">
+            <summary>
+            Creates a new <see cref="T:SMSSC.Data.SqlClient.Parameter"/> instance.
+            </summary>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.SqlType">
+            <summary>
+            Gets or sets the SqlType.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.Direction">
+            <summary>
+            Gets or sets the Direction.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.Size">
+            <summary>
+            Gets or sets the size.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.Precision">
+            <summary>
+            Gets or sets the precision.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:SMSSC.Data.SqlClient.Parameter.Scale">
+            <summary>
+            Gets or sets the scale.
+            </summary>
+            <value></value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ESMEDICAL" EntityNamespace="ESMEDICAL.Data" ContextNamespace="ESMEDICAL.Data" Class="EsMedicalDbContext" EntityBase="LinqEntityBase" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.; Database=ESMEDICAL;UID=sa;PWD=sa" SettingsObjectName="Properties.Settings" SettingsPropertyName="EsmedicalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Diabetes" Member="Diabetes">
+    <Type Name="Diabetes">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Age" Storage="_age" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Storage="_gender" Type="System.String" DbType="varchar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Polyuria" Storage="_polyuria" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polydipsia" Storage="_polydipsia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="SuddenWeightLoss" Storage="_suddenWeightLoss" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Weakness" Storage="_weakness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polyphagia" Storage="_polyphagia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="GenitalThrush" Storage="_genitalThrush" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="VisualBlurring" Storage="_visualBlurring" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Itching" Storage="_itching" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Irritability" Storage="_irritability" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="DelayedHealing" Storage="_delayedHealing" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="PartialParesis" Storage="_partialParesis" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="MuscleStiffness" Storage="_muscleStiffness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Alopecia" Storage="_alopecia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Obesity" Storage="_obesity" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Class" Storage="_class" Type="System.String" DbType="varchar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Storage="_createdDate" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="varchar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiabetesRules" Member="DiabetesRules">
+    <Type Name="DiabetesRules">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Gender" Storage="_gender" Type="System.String" DbType="varchar(6)" CanBeNull="true" />
+      <Column Name="Polyuria" Storage="_polyuria" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polydipsia" Storage="_polydipsia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="SuddenWeightLoss" Storage="_suddenWeightLoss" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Weakness" Storage="_weakness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polyphagia" Storage="_polyphagia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="GenitalThrush" Storage="_genitalThrush" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="VisualBlurring" Storage="_visualBlurring" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Itching" Storage="_itching" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Irritability" Storage="_irritability" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="DelayedHealing" Storage="_delayedHealing" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="PartialParesis" Storage="_partialParesis" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="MuscleStiffness" Storage="_muscleStiffness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Alopecia" Storage="_alopecia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Obesity" Storage="_obesity" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Class" Storage="_class" Type="System.String" DbType="varchar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Storage="_createdDate" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="varchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AgeStart" Storage="_ageStart" Type="System.Decimal" DbType="decimal(4,1)" CanBeNull="true" />
+      <Column Name="AgeEnd" Storage="_ageEnd" Type="System.Decimal" DbType="decimal(4,1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="Username" Storage="_username" Type="System.String" DbType="varchar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Storage="_password" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Storage="_name" Type="System.String" DbType="nvarchar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Storage="_status" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Storage="_createdDate" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="varchar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Custom_Diabetes_Get_List" Method="CustomDiabetesGetList">
+    <Parameter Name="@FromDate" Parameter="fromDate" Type="System.DateTime" DbType="datetime" />
+    <Parameter Name="@ToDate" Parameter="toDate" Type="System.DateTime" DbType="datetime" />
+    <Parameter Name="@Gender" Parameter="gender" Type="System.String" DbType="varchar(6)" />
+    <Parameter Name="@PageIndex" Parameter="pageIndex" Type="System.Int32" DbType="int" />
+    <Parameter Name="@PageSize" Parameter="pageSize" Type="System.Int32" DbType="int" />
+    <ElementType Name="CustomDiabetesGetListResult">
+      <Column Name="Id" Storage="_id" Type="System.Int32" DbType="int NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Storage="_age" Type="System.Int16" DbType="smallint NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Storage="_gender" Type="System.String" DbType="varchar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Polyuria" Storage="_polyuria" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polydipsia" Storage="_polydipsia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="SuddenWeightLoss" Storage="_suddenWeightLoss" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Weakness" Storage="_weakness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Polyphagia" Storage="_polyphagia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="GenitalThrush" Storage="_genitalThrush" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="VisualBlurring" Storage="_visualBlurring" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Itching" Storage="_itching" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Irritability" Storage="_irritability" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="DelayedHealing" Storage="_delayedHealing" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="PartialParesis" Storage="_partialParesis" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="MuscleStiffness" Storage="_muscleStiffness" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Alopecia" Storage="_alopecia" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Obesity" Storage="_obesity" Type="System.String" DbType="varchar(3)" CanBeNull="true" />
+      <Column Name="Class" Storage="_class" Type="System.String" DbType="varchar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Storage="_createdDate" Type="System.DateTime" DbType="datetime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Storage="_createdBy" Type="System.String" DbType="varchar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="RowNumber" Storage="_rowNumber" Type="System.Int64" DbType="bigint" CanBeNull="true" />
+      <Column Name="TotalPages" Storage="_totalPages" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

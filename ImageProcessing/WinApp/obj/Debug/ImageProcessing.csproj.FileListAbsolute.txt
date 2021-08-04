@@ -11,3 +11,17 @@ D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmBrightnes
 D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmContrast.resources
 D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmGrayScale.resources
 D:\Working\ThacSi\XuLyAnh\ImageProcessing\obj\Debug\ImageProcessing.frmGamma.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\bin\Debug\ImageProcessing.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\bin\Debug\ImageProcessing.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.csproj.AssemblyReference.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmGamma.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmContrast.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmBrightness.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmGrayScale.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmInvert.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.frmMain.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.Properties.Resources.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.csproj.GenerateResource.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ImageProcessing\WinApp\obj\Debug\ImageProcessing.pdb

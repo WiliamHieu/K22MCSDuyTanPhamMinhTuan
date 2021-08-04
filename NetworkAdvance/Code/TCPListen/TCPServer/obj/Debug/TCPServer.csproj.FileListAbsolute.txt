@@ -1,0 +1,5 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPServer\obj\Debug\TCPServer.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPServer\bin\Debug\TCPServer.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPServer\bin\Debug\TCPServer.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPServer\obj\Debug\TCPServer.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPServer\obj\Debug\TCPServer.pdb

@@ -1,0 +1,2 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Release\ESMEDICAL.Data.csproj.AssemblyReference.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Release\ESMEDICAL.Data.csproj.CoreCompileInputs.cache

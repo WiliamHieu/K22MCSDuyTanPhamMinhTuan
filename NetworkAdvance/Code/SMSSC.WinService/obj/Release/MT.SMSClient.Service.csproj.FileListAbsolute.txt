@@ -1,0 +1,37 @@
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MTSoftware SMS Client.exe.config
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MTSoftware SMS Client.exe
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MTSoftware SMS Client.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\GSMCommShared.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\GSMCommunication.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Logger.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.SqlClient.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Entities.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\PDUConverter.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Configuration.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Configuration.Install.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Data.DataSetExtensions.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Management.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Runtime.Remoting.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.ServiceProcess.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\System.Xml.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.ObjectBuilder.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\GSMCommShared.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\Logger.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.SqlClient.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Data.SqlClient.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Entities.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MOBILE.Entities.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\PDUConverter.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Release\MTSoftware SMS Client.exe
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Release\MTSoftware SMS Client.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Release\MTSoftware SMS Gateway.exe.config

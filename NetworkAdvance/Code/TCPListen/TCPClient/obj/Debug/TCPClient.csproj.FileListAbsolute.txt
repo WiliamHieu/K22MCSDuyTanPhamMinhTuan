@@ -1,0 +1,5 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPClient\bin\Debug\TCPClient.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPClient\bin\Debug\TCPClient.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPClient\obj\Debug\TCPClient.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\NetworkAdvance\Code\TCPListen\TCPClient\obj\Debug\TCPClient.pdb

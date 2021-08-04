@@ -1,0 +1,32 @@
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MTSoftware SMS Client.exe.config
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MTSoftware SMS Client.exe
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MTSoftware SMS Client.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Debug\MTSoftware SMS Client.exe
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Debug\MTSoftware SMS Client.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\GSMCommShared.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.CSharp.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.SqlClient.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Entities.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.Configuration.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.Runtime.Remoting.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.ServiceProcess.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\System.Xml.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\GSMCommShared.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.SqlClient.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Data.SqlClient.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Entities.pdb
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\bin\Debug\MOBILE.Entities.xml
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Debug\MT.SMSClient.Service.ProjectInstaller.resources
+D:\Working\Projects\Pro_SMSGateway\MT.SMSClient.Service\obj\Debug\MT.SMSClient.Service.csproj.GenerateResource.Cache

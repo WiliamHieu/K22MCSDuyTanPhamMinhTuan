@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="EsmedicalConnectionString" value="Data Source=.; Database=ESMEDICAL;UID=sa;PWD=sa" />
+  </variables>
+  <defaultProperties>
+    <property name="DbmlFile">Esmedical.dbml</property>
+    <property name="Framework">v40</property>
+  </defaultProperties>
+  <propertySets>
+    <propertySet name="DBML" template="..\..\..\..\..\GenerateCode\PLINQO\CSharp\Dbml.cst">
+      <property name="IncludeViews">False</property>
+      <property name="IncludeFunctions">True</property>
+      <property name="IgnoreList">
+        <stringList>
+          <string>^dbo.sysdiagrams$</string>
+          <string>^dbo.sp_</string>
+        </stringList>
+      </property>
+      <property name="CleanExpression">
+        <stringList>
+          <string>^(sp|tbl|udf|vw)_</string>
+        </stringList>
+      </property>
+      <property name="EnumList">
+        <stringList>
+          <string>(E|e)num$</string>
+        </stringList>
+      </property>
+      <property name="EntityBase">LinqEntityBase</property>
+      <property name="IncludeDeleteOnNull">False</property>
+      <property name="NameColumn">
+        <stringList>
+          <string>((N|n)ame)|((T|t)ype(C|c)ode)</string>
+        </stringList>
+      </property>
+      <property name="DescriptionColumm">
+        <stringList>
+          <string>(D|d)esc</string>
+        </stringList>
+      </property>
+      <property name="DbmlFile">ESMEDICAL.dbml</property>
+      <property name="IncludeList">
+        <stringList />
+      </property>
+      <property name="NamingConventions">
+        <NamingProperty xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+          <TableNaming>Singular</TableNaming>
+          <EntityNaming>Singular</EntityNaming>
+          <AssociationNaming>ListSuffix</AssociationNaming>
+        </NamingProperty>
+      </property>
+      <property name="SourceDatabase">
+        <connectionString>$(EsmedicalConnectionString)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="EntityNamespace">ESMEDICAL.Data</property>
+      <property name="ContextNamespace">ESMEDICAL.Data</property>
+      <property name="DataContextName">EsMedicalDbContext</property>
+    </propertySet>
+    <propertySet name="Entities" template="..\..\..\..\..\GenerateCode\PLINQO\CSharp\Entities.cst">
+      <property name="AuditingEnabled">True</property>
+      <property name="IncludeDataServices">True</property>
+      <property name="IncludeDataRules">True</property>
+      <property name="IncludeDataContract">True</property>
+      <property name="AssociationNamingSuffix">ListSuffix</property>
+      <property name="OutputDirectory">.\Entities</property>
+      <property name="BaseDirectory">.\</property>
+      <property name="ModelDirectory">.\Models</property>
+    </propertySet>
+    <propertySet name="Queries" template="..\..\..\..\..\GenerateCode\PLINQO\CSharp\Queries.cst">
+      <property name="QueryDirectory">.\Queries</property>
+      <property name="MethodPrefix">By</property>
+      <property name="UniqueMethodPrefix">GetBy</property>
+      <property name="MethodKeySuffix">Key</property>
+      <property name="SourceDatabase">
+        <connectionString>$(EsmedicalConnectionString)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

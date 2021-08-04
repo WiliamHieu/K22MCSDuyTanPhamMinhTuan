@@ -1,0 +1,5 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\StrassenMultiply\obj\Debug\StrassenMultiply.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\StrassenMultiply\bin\Debug\StrassenMultiply.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\StrassenMultiply\bin\Debug\StrassenMultiply.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\StrassenMultiply\obj\Debug\StrassenMultiply.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\StrassenMultiply\obj\Debug\StrassenMultiply.pdb

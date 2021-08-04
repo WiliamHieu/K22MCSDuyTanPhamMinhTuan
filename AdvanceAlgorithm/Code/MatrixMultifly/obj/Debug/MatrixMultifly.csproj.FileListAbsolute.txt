@@ -1,0 +1,11 @@
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\bin\Debug\MatrixMultifly.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\bin\Debug\MatrixMultifly.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.frmMain.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.Properties.Resources.resources
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.csproj.GenerateResource.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.csproj.CopyComplete
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.exe
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\obj\Debug\MatrixMultifly.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\bin\Debug\DevExpress.Utils.v9.2.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\AdvanceAlgorithm\Code\MatrixMultifly\bin\Debug\DevExpress.Data.v9.2.dll

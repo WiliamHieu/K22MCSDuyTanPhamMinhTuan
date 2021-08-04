@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type='text/xsl' href="scriptsql.xsl"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database includeDrop="false">SMSSmartCare</database>
+<procedures>
+<procedure owner="dbo" name="usp_MessageTemplate_GetPaged" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Gets records from the MessageTemplate table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+		<parameter name="@WhereClause" type="nvarchar" direction="Input" size="1000" precision="0" scale="0" param="(2000)" />
+		<parameter name="@OrderBy" type="varchar" direction="Input" size="100" precision="0" scale="0" param="(200)"/>
+	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DECLARE @SQL AS nvarchar(2000)
+    SET @SQL = 'SELECT'
+    SET @SQL = @SQL + '[Id],'
+    SET @SQL = @SQL + '[Title],'
+    SET @SQL = @SQL + '[ContentText],'
+    SET @SQL = @SQL + '[Status],'
+    SET @SQL = @SQL + '[CreatedDate],'
+    SET @SQL = @SQL + '[Note]'
+    SET @SQL = @SQL + ' FROM [dbo].[MessageTemplate]'
+    IF LEN(@WhereClause) > 0
+    BEGIN
+        SET @SQL = @SQL + ' WHERE ' + @WhereClause
+    END
+    IF (LEN(@OrderBy) > 0)
+    BEGIN
+        SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+    END
+    EXEC sp_executesql @SQL
+    ]]></body>
+</procedure>
+
+<procedure owner="dbo" name="usp_MessageTemplate_GetRowCount" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Gets records from the MessageTemplate table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+		<parameter name="@WhereClause" type="nvarchar" direction="Input" size="1000" precision="0" scale="0" param="(2000)" />
+	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DECLARE @SQL AS nvarchar(1500)
+    SET @SQL = 'SELECT COUNT(Id) as TotalItems' 
+    SET @SQL = @SQL + ' FROM [dbo].[MessageTemplate]'
+    IF LEN(@WhereClause) > 0
+    BEGIN
+        SET @SQL = @SQL + ' WHERE ' + @WhereClause
+    END
+    EXEC sp_executesql @SQL
+    ]]></body>
+</procedure>
+
+<procedure owner="dbo" name="usp_MessageTemplate_Insert" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Inserts a record into the MessageTemplate table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="int" direction="Output" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@Title" type="nvarchar" direction="Input" size="255" precision="0" scale="0" param="(255)" nulldefault=""/>				<parameter name="@ContentText" type="nvarchar" direction="Input" size="180" precision="0" scale="0" param="(180)" nulldefault=""/>				<parameter name="@Status" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@CreatedDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@Note" type="nvarchar" direction="Input" size="300" precision="0" scale="0" param="(300)" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	INSERT INTO [dbo].[MessageTemplate]
+	(
+        [Title],
+        [ContentText],
+        [Status],
+        [CreatedDate],
+        [Note]
+	)
+	VALUES
+	(
+        @Title,
+        @ContentText,
+        @Status,
+        @CreatedDate,
+        @Note
+	)
+	
+	-- Get the identity value
+	SET @Id = SCOPE_IDENTITY()
+						
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageTemplate_Update" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Updates a record in the MessageTemplate table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@Title" type="nvarchar" direction="Input" size="255" precision="0" scale="0" param="(255)" nulldefault=""/>				<parameter name="@ContentText" type="nvarchar" direction="Input" size="180" precision="0" scale="0" param="(180)" nulldefault=""/>				<parameter name="@Status" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@CreatedDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@Note" type="nvarchar" direction="Input" size="300" precision="0" scale="0" param="(300)" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	UPDATE [dbo].[MessageTemplate] SET
+           [Title] = @Title,
+           [ContentText] = @ContentText,
+           [Status] = @Status,
+           [CreatedDate] = @CreatedDate,
+           [Note] = @Note
+	 WHERE [Id] = @Id 
+
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageTemplate_Delete" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Deletes a record in the MessageTemplate table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DELETE FROM [dbo].[MessageTemplate] WITH (ROWLOCK) 
+	      WHERE [Id] = @Id
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageTemplate_GetById" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Select records from the MessageTemplate table through an index
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	SELECT
+            [Id],
+            [Title],
+            [ContentText],
+            [Status],
+            [CreatedDate],
+            [Note]
+	  FROM
+		    [dbo].[MessageTemplate]
+	 WHERE
+            [Id] = @Id
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageHistory_GetPaged" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Gets records from the MessageHistory table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+		<parameter name="@WhereClause" type="nvarchar" direction="Input" size="1000" precision="0" scale="0" param="(2000)" />
+		<parameter name="@OrderBy" type="varchar" direction="Input" size="100" precision="0" scale="0" param="(200)"/>
+	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DECLARE @SQL AS nvarchar(2000)
+    SET @SQL = 'SELECT'
+    SET @SQL = @SQL + '[Id],'
+    SET @SQL = @SQL + '[MessageType],'
+    SET @SQL = @SQL + '[FromPhoneNumber],'
+    SET @SQL = @SQL + '[ToPhoneNumber],'
+    SET @SQL = @SQL + '[ContentText],'
+    SET @SQL = @SQL + '[Status],'
+    SET @SQL = @SQL + '[CreatedDate],'
+    SET @SQL = @SQL + '[SentDate],'
+    SET @SQL = @SQL + '[Note]'
+    SET @SQL = @SQL + ' FROM [dbo].[MessageHistory]'
+    IF LEN(@WhereClause) > 0
+    BEGIN
+        SET @SQL = @SQL + ' WHERE ' + @WhereClause
+    END
+    IF (LEN(@OrderBy) > 0)
+    BEGIN
+        SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+    END
+    EXEC sp_executesql @SQL
+    ]]></body>
+</procedure>
+
+<procedure owner="dbo" name="usp_MessageHistory_GetRowCount" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Gets records from the MessageHistory table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+		<parameter name="@WhereClause" type="nvarchar" direction="Input" size="1000" precision="0" scale="0" param="(2000)" />
+	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DECLARE @SQL AS nvarchar(1500)
+    SET @SQL = 'SELECT COUNT(Id) as TotalItems' 
+    SET @SQL = @SQL + ' FROM [dbo].[MessageHistory]'
+    IF LEN(@WhereClause) > 0
+    BEGIN
+        SET @SQL = @SQL + ' WHERE ' + @WhereClause
+    END
+    EXEC sp_executesql @SQL
+    ]]></body>
+</procedure>
+
+<procedure owner="dbo" name="usp_MessageHistory_Insert" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Inserts a record into the MessageHistory table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="uniqueidentifier" direction="Input" size="16" precision="0" scale="0" param="" nulldefault=""/>				<parameter name="@MessageType" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@FromPhoneNumber" type="varchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>				<parameter name="@ToPhoneNumber" type="varchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>				<parameter name="@ContentText" type="nvarchar" direction="Input" size="180" precision="0" scale="0" param="(180)" nulldefault=""/>				<parameter name="@Status" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@CreatedDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@SentDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@Note" type="nvarchar" direction="Input" size="300" precision="0" scale="0" param="(300)" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	INSERT INTO [dbo].[MessageHistory]
+	(
+        [Id],
+        [MessageType],
+        [FromPhoneNumber],
+        [ToPhoneNumber],
+        [ContentText],
+        [Status],
+        [CreatedDate],
+        [SentDate],
+        [Note]
+	)
+	VALUES
+	(
+        @Id,
+        @MessageType,
+        @FromPhoneNumber,
+        @ToPhoneNumber,
+        @ContentText,
+        @Status,
+        @CreatedDate,
+        @SentDate,
+        @Note
+	)
+	
+						
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageHistory_Update" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Updates a record in the MessageHistory table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="uniqueidentifier" direction="Input" size="16" precision="0" scale="0" param="" nulldefault=""/>				<parameter name="@OriginalId" type="uniqueidentifier" direction="Input" size="16" precision="0" scale="0" param="" nulldefault=""/>				<parameter name="@MessageType" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@FromPhoneNumber" type="varchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>				<parameter name="@ToPhoneNumber" type="varchar" direction="Input" size="15" precision="0" scale="0" param="(15)" nulldefault=""/>				<parameter name="@ContentText" type="nvarchar" direction="Input" size="180" precision="0" scale="0" param="(180)" nulldefault=""/>				<parameter name="@Status" type="int" direction="Input" size="4" precision="10" scale="0" param="" nulldefault=""/>				<parameter name="@CreatedDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@SentDate" type="datetime" direction="Input" size="8" precision="23" scale="3" param="" nulldefault=""/>				<parameter name="@Note" type="nvarchar" direction="Input" size="300" precision="0" scale="0" param="(300)" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	UPDATE [dbo].[MessageHistory] SET
+           [Id] = @Id,
+           [MessageType] = @MessageType,
+           [FromPhoneNumber] = @FromPhoneNumber,
+           [ToPhoneNumber] = @ToPhoneNumber,
+           [ContentText] = @ContentText,
+           [Status] = @Status,
+           [CreatedDate] = @CreatedDate,
+           [SentDate] = @SentDate,
+           [Note] = @Note
+	 WHERE [Id] = @OriginalId 
+
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageHistory_Delete" grant="">
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Deletes a record in the MessageHistory table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="uniqueidentifier" direction="Input" size="16" precision="0" scale="0" param="" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+	
+    DELETE FROM [dbo].[MessageHistory] WITH (ROWLOCK) 
+	      WHERE [Id] = @Id
+	]]></body>
+</procedure>
+<procedure owner="dbo" name="usp_MessageHistory_GetById" >
+	<comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+
+-- Created By: MTSoftware (www.mtsoftware.com.vn)
+-- Purpose: Select records from the MessageHistory table through an index
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+	<parameters>
+				<parameter name="@Id" type="uniqueidentifier" direction="Input" size="16" precision="0" scale="0" param="" nulldefault=""/>	</parameters>
+	<body><![CDATA[
+    SET NOCOUNT OFF
+    
+	SELECT
+            [Id],
+            [MessageType],
+            [FromPhoneNumber],
+            [ToPhoneNumber],
+            [ContentText],
+            [Status],
+            [CreatedDate],
+            [SentDate],
+            [Note]
+	  FROM
+		    [dbo].[MessageHistory]
+	 WHERE
+            [Id] = @Id
+	]]></body>
+</procedure>
+</procedures>
+</root>

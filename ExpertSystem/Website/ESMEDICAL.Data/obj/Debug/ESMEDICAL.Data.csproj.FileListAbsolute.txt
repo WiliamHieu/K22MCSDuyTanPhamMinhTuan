@@ -1,0 +1,17 @@
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\ESMEDICAL.Data.dll
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\ESMEDICAL.Data.pdb
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\CodeSmith.Data.dll
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\CodeSmith.Data.LinqToSql.dll
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\CodeSmith.Data.xml
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\bin\Debug\CodeSmith.Data.LinqToSql.xml
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.csproj.CoreCompileInputs.cache
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.csproj.CopyComplete
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.dll
+D:\NetTiers\PLINQO\ESMEDICAL\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\bin\Debug\ESMEDICAL.Data.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\bin\Debug\ESMEDICAL.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.csproj.CoreCompileInputs.cache
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.csproj.CopyComplete
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.dll
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.pdb
+D:\Working\GitHub\K22MCSDuyTanPhamMinhTuan\ExpertSystem\Website\ESMEDICAL.Data\obj\Debug\ESMEDICAL.Data.csproj.AssemblyReference.cache
